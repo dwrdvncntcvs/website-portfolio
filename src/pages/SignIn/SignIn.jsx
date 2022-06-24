@@ -24,9 +24,8 @@ export default function SignIn() {
     };
 
     await signInRequest(credentials);
-    console.log(credentials);
 
-    navigate("/admin");
+    if (state.errorMessage === "") navigate("/admin");
   };
 
   const inputFields = [
@@ -58,6 +57,7 @@ export default function SignIn() {
         ))}
         <button type="submit">Sign In</button>
       </form>
+      {state.errorMessage !== "" && <p>{state.errorMessage}</p>}
     </div>
   );
 }

@@ -1,25 +1,59 @@
 import createDataContext from "./createDataContext";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import { AUTH_VARIABLE } from "../utils/variables";
+
+const getError = (error = "") => {
+  const errorMessage = error.split("Error (").reverse()[0].split(")")[0];
+
+  let message;
+  switch (errorMessage) {
+    case `auth/invalid-email`:
+      message = "Enter a valid email address";
+      break;
+    case `auth/user-not-found`:
+      message = "User does not exist";
+      break;
+    case "auth/wrong-password":
+      message = "Password is incorrect";
+      break;
+    case "auth/internal-error":
+      message = "Please enter a password";
+      break;
+    default:
+      return;
+  }
+
+  console.log(message);
+  return message;
+};
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
+    case AUTH_VARIABLE.SET_ERROR:
+      return { ...state, errorMessage: payload };
     default:
       return { ...state };
   }
 };
 
 const signInRequest = (dispatch) => async (credentials) => {
-  await signInWithEmailAndPassword(
-    auth,
-    credentials?.email,
-    credentials?.password
-  );
-  console.log("Sign In Successful");
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      credentials?.email,
+      credentials?.password
+    );
+    console.log("Signed in successfully");
+  } catch (err) {
+    const errorMessage = getError(err.message);
+
+    dispatch({ type: AUTH_VARIABLE.SET_ERROR, payload: errorMessage });
+  }
 };
 
 export const { Context, Provider } = createDataContext(
   reducer,
   { signInRequest },
-  {}
+  { errorMessage: "" }
 );

@@ -12,9 +12,8 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (Object.keys(state.user).length > 0) {
-      navigate("/admin");
-    }
+    if (state.user !== null)
+      if (Object.keys(state.user).length > 0) navigate("/admin");
   }, [state.user]);
 
   const signInAction = async (e) => {

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useAuth } from "../../hooks/dataHooks";
 import "./signIn.scss";
 
 export default function SignIn() {
+  const { signInRequest } = useAuth()
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +15,7 @@ export default function SignIn() {
       password,
     };
 
+    signInRequest(credentials)
     console.log(credentials)
   };
 

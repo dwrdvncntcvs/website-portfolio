@@ -52,8 +52,12 @@ const signInRequest = (dispatch) => async (credentials) => {
   }
 };
 
+const setErrorMessage = (dispatch) => () => {
+  dispatch({ type: AUTH_VARIABLE.SET_ERROR, payload: "" });
+};
+
 export const { Context, Provider } = createDataContext(
   reducer,
-  { signInRequest },
+  { signInRequest, setErrorMessage },
   { errorMessage: "" }
 );

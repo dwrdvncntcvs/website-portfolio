@@ -6,6 +6,5 @@ export default function NavBar() {
   const location = useLocation();
 
   if (location.pathname === "/sign-in") return null;
-
-  return <div>NavBar</div>;
+  else return <div>NavBar</div>;
 }

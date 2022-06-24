@@ -1,22 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/dataHooks";
+import { useNavigate } from "react-router-dom";
 import "./signIn.scss";
 
 export default function SignIn() {
-  const { signInRequest } = useAuth()
+  const { state, signInRequest } = useAuth();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signInAction = (e) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Object.keys(state.user).length > 0) {
+      navigate("/admin");
+    }
+  }, [state.user]);
+
+  const signInAction = async (e) => {
     e.preventDefault();
     const credentials = {
       email,
       password,
     };
 
-    signInRequest(credentials)
-    console.log(credentials)
+    await signInRequest(credentials);
+    console.log(credentials);
+
+    navigate("/admin");
   };
 
   const inputFields = [

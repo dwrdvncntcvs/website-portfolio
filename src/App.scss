@@ -1,0 +1,8 @@
+@import "./variable.scss";
+@import "./index.scss";
+
+.a__main-container {
+  @extend .flex-row;
+  @extend .page-size;
+  background-color: $secondary-color;
+}

@@ -1,0 +1,100 @@
+@import "../../index.scss";
+@import "../../variable.scss";
+
+.nb__main-container {
+  @extend .flex-column;
+  width: 120px;
+  background-color: $tertiary-color;
+
+  #nb__head-container {
+    flex: 1;
+    display: flex;
+    @extend .flex-center;
+
+    #nb__logo {
+      width: $logo-size;
+      height: $logo-size;
+      background-color: $secondary-color;
+      border-radius: 100%;
+    }
+  }
+
+  #nb__link-container {
+    flex: 4;
+    @extend .flex-center;
+    @extend .flex-column;
+    gap: 10px;
+
+    .nb__link {
+      color: $tertiary-color;
+      background-color: $quaternary-color;
+      text-decoration: none;
+      font-size: $btn-font-size-c;
+      width: $btn-60;
+      height: $btn-60;
+      @extend .flex-row;
+      @extend .flex-center;
+      border-radius: 10px;
+      transition: all ease 0.2s;
+
+      &:hover {
+        color: $quaternary-color;
+        background-color: $primary-color;
+        border-radius: 100%;
+      }
+    }
+
+    .nb__link-active {
+      @extend .nb__link;
+      color: $quaternary-color;
+      background-color: $primary-color;
+      border-radius: 100%;
+    }
+
+    button {
+      @extend .flex-column;
+      @extend .flex-center;
+      background-color: transparent;
+      width: $btn-60;
+      height: $btn-60;
+      border: none;
+      font-size: $btn-font-size-c;
+      color: $primary-color;
+      transition: all ease 0.5s;
+      border-radius: 10px ;
+
+
+      &:hover {
+        background-color: $secondary-color;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  #nb__footer-container {
+    flex: 1;
+    @extend .flex-center;
+    @extend .flex-column;
+    font-size: 12px;
+    gap: 10px;
+
+    p:nth-child(1) {
+      color: $quaternary-color;
+    }
+
+    p:nth-child(2) {
+      color: $primary-color;
+    }
+
+    .nb__soc-group {
+      @extend .flex-row;
+      gap: 8px;
+      .nb__soc-link {
+        color: $quaternary-color;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all ease 0.2s;
+      }
+    }
+  }
+}

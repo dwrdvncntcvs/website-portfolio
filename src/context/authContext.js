@@ -1,5 +1,5 @@
 import createDataContext from "./createDataContext";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { AUTH_VARIABLE } from "../utils/variables";
 
@@ -56,8 +56,12 @@ const setErrorMessage = (dispatch) => () => {
   dispatch({ type: AUTH_VARIABLE.SET_ERROR, payload: "" });
 };
 
+const signOutRequest = (dispatch) => async () => {
+  await signOut(auth);
+};
+
 export const { Context, Provider } = createDataContext(
   reducer,
-  { signInRequest, setErrorMessage },
+  { signInRequest, setErrorMessage, signOutRequest },
   { errorMessage: "" }
 );

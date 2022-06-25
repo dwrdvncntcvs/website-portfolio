@@ -6,10 +6,10 @@ import { NavBar } from "./components";
 
 function App() {
   return (
-    <div>
+    <div className="a__main-container">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />}></Route>
 
         <Route path="/admin/" element={<ProtectedRoutes />}>

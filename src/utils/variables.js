@@ -9,4 +9,9 @@ const SOC_MED = {
   LI: "https://www.linkedin.com/in/edward-vincent-cuevas-5a2485240/",
 };
 
-export { AUTH_VARIABLE, SOC_MED };
+const ACCESS_VAR = {
+  PRIVATE: "private",
+  PUBLIC: "public",
+};
+
+export { AUTH_VARIABLE, SOC_MED, ACCESS_VAR };

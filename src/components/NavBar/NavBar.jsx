@@ -1,6 +1,6 @@
 import React from "react";
 import "./navBar.scss";
-import { Link, useLocation, useOutletContext } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HiHome, HiLogout } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
@@ -9,7 +9,6 @@ import { accessLink } from "../../utils/helper";
 
 export default function NavBar() {
   const { state, signOutRequest } = useAuth();
-
   const location = useLocation();
 
   const isActive = (path, link) => {

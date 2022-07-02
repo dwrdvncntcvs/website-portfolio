@@ -9,8 +9,6 @@ export default function Home() {
     getHomeData();
   }, []);
 
-  console.log(state)
-
   return (
     <div>
       <HoverElement title={"Add Greetings"} value="greetings">

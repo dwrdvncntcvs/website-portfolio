@@ -14,4 +14,12 @@ const ACCESS_VAR = {
   PUBLIC: "public",
 };
 
-export { AUTH_VARIABLE, SOC_MED, ACCESS_VAR };
+const COLLECTION = {
+  HOME: "home",
+};
+
+const HOME_CONTEXT_VAR = {
+  GET_HOME_DATA: "getHomeData",
+};
+
+export { AUTH_VARIABLE, SOC_MED, ACCESS_VAR, COLLECTION, HOME_CONTEXT_VAR };

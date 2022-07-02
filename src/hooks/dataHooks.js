@@ -1,8 +1,12 @@
 import { useContext } from "react";
-import { AuthContext } from "../context";
+import { AuthContext, HomeContext } from "../context";
 
 const useAuth = () => {
   return useContext(AuthContext);
 };
 
-export { useAuth };
+const useHomeContext = () => {
+  return useContext(HomeContext);
+};
+
+export { useAuth, useHomeContext };

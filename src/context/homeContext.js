@@ -1,7 +1,8 @@
 import createDataContext from "./createDataContext";
 import { getDocs, collection, doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db, storage } from "../firebaseConfig";
 import { COLLECTION, HOME_CONTEXT_VAR } from "../utils/variables";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 const homeRef = collection(db, COLLECTION.HOME);
 
@@ -16,6 +17,17 @@ const homeRef = collection(db, COLLECTION.HOME);
 const getData = async () => {
   const response = await getDocs(homeRef);
   return response.docs.map((doc) => ({ ...doc.data(), id: doc.id }))[0];
+};
+
+const uploadImageFile = async (imageFile) => {
+  const storageRef = ref(
+    storage,
+    `images/${Date.now()}-${Math.floor(1000 + Math.random() * 9000)}-${
+      imageFile.name
+    }`
+  );
+  const file = await uploadBytes(storageRef, imageFile);
+  return await getDownloadURL(file.ref);
 };
 
 const reducer = (state, { type, payload }) => {
@@ -44,6 +56,10 @@ const addHomeDetail = (dispatch) => async (value, key, docId) => {
   }
   if (key === "description") {
     await updateDoc(docRef, { description: value });
+  }
+  if (key === "image") {
+    const imageUrl = await uploadImageFile(value);
+    await updateDoc(docRef, { image: imageUrl });
   }
 
   let data = await getData();

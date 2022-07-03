@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
-import { useAuth } from "../../../../hooks/dataHooks";
+import { useAuth, useHomeContext } from "../../../../hooks/dataHooks";
 
 import { useOutletContext } from "react-router-dom";
 import "./image.scss";
 import { ACCESS_VAR } from "../../../../utils/variables";
 
 export default function Image({ src, alt }) {
-  const { state } = useAuth();
+  const { state, addHomeDetail } = useHomeContext();
   const [imageFile, setImageFile] = useState({});
   const [imageUrl, setImageUrl] = useState("");
   const [show, setShow] = useState(false);
@@ -25,8 +25,8 @@ export default function Image({ src, alt }) {
   const previewButtons = [
     {
       label: "Upload",
-      action: () => {
-        console.log("Upload");
+      action: async () => {
+        await addHomeDetail(imageFile, "image", state.data.id);
       },
     },
     {
@@ -78,7 +78,7 @@ export default function Image({ src, alt }) {
   ) : (
     <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
       <img className="i__display" src={src} alt="" />
-      {show &&
+      {show && access === ACCESS_VAR.PRIVATE &&
         buttons.map(({ label, action }, i) => (
           <button key={i} onClick={action}>
             {label}

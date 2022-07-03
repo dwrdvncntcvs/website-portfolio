@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useHomeContext } from "../../hooks/dataHooks";
-import { HoverElement } from "./components";
+import { HoverElement, Image } from "./components";
 import "./home.scss";
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
       <HoverElement title={"Add Description"} value="description">
         <p>{state?.data?.description}</p>
       </HoverElement>
+      <Image src={state?.data?.image} alt="main-image"></Image>
     </div>
   );
 }

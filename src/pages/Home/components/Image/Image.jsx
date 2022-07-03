@@ -4,6 +4,7 @@ import { useAuth, useHomeContext } from "../../../../hooks/dataHooks";
 import { useOutletContext } from "react-router-dom";
 import "./image.scss";
 import { ACCESS_VAR } from "../../../../utils/variables";
+import { checkImageExt } from "../../../../utils/helper";
 
 export default function Image({ src, alt }) {
   const { state, addHomeDetail } = useHomeContext();
@@ -64,6 +65,11 @@ export default function Image({ src, alt }) {
           onChange={(e) => {
             const file = e.target.files[0];
 
+            if (!checkImageExt(file.name)) {
+              alert("Not a valid image");
+              return;
+            }
+
             const fileReader = new FileReader();
             fileReader.addEventListener("load", (image) => {
               setImageUrl(image.target.result);
@@ -78,7 +84,8 @@ export default function Image({ src, alt }) {
   ) : (
     <div onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
       <img className="i__display" src={src} alt="" />
-      {show && access === ACCESS_VAR.PRIVATE &&
+      {show &&
+        access === ACCESS_VAR.PRIVATE &&
         buttons.map(({ label, action }, i) => (
           <button key={i} onClick={action}>
             {label}

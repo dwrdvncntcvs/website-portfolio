@@ -26,4 +26,8 @@ const getAuthError = (error = "") => {
   return message;
 };
 
-export { accessLink, getAuthError };
+const checkImageExt = (imageName = "") => {
+  return /\.svg|\.jpeg|\.png|\.jpg/g.test(imageName) ? true : false;
+};
+
+export { accessLink, getAuthError, checkImageExt };

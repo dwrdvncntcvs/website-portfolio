@@ -10,8 +10,6 @@ export default function ProtectedRoutes({ access }) {
   const [component, setComponent] = useState(null);
 
   useEffect(() => {
-    console.log(access);
-    console.log(state.user);
     if (access === ACCESS_VAR.PUBLIC) {
       setComponent(
         checkIfUserActive(state.user) ? (

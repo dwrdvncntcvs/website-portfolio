@@ -11,7 +11,8 @@ const createDataContext = (reducer, actions, states) => {
 
     useEffect(() => {
       onAuthStateChanged(auth, (user) => {
-        setUser(user);
+        if (user) setUser(user);
+        else setUser({});
       });
     }, []);
 

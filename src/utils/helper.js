@@ -30,4 +30,8 @@ const checkImageExt = (imageName = "") => {
   return /\.svg|\.jpeg|\.png|\.jpg/g.test(imageName) ? true : false;
 };
 
-export { accessLink, getAuthError, checkImageExt };
+const checkIfUserActive = (user) => {
+  return Object.keys(user).length >= 1;
+};
+
+export { accessLink, getAuthError, checkImageExt, checkIfUserActive };

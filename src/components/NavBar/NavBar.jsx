@@ -5,7 +5,7 @@ import { HiHome, HiLogout } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
 import { useAuth } from "../../hooks/dataHooks";
-import { accessLink } from "../../utils/helper";
+import { accessLink, checkIfUserActive } from "../../utils/helper";
 
 export default function NavBar() {
   const { state, signOutRequest } = useAuth();
@@ -46,7 +46,7 @@ export default function NavBar() {
               <Icon />
             </Link>
           ))}
-          {state.user ? (
+          {checkIfUserActive(state.user) ? (
             <button onClick={signOutRequest}>
               <HiLogout />
             </button>

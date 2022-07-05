@@ -1,26 +1,24 @@
 import React from "react";
 import "./navBar.scss";
 import { Link, useLocation } from "react-router-dom";
-import { HiHome, HiLogout } from "react-icons/hi";
+import { HiHome, HiLogout, HiCode } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
 import { useAuth } from "../../hooks/dataHooks";
-import { accessLink, checkIfUserActive } from "../../utils/helper";
+import { checkIfUserActive } from "../../utils/helper";
+import { app_logo } from "../../assets/images";
 
 export default function NavBar() {
   const { state, signOutRequest } = useAuth();
   const location = useLocation();
 
-  const isActive = (path, link) => {
-    return link.filter((element) => element === path).length > 0 ? true : false;
-  };
-
-  const link = (path) => {
-    return accessLink(path, state.user);
+  const isActive = (link) => {
+    return location?.pathname === link ? true : false;
   };
 
   const navLinks = [
-    { Icon: HiHome, to: link("/"), active: [link("/"), link("")] },
+    { Icon: HiHome, to: "/" },
+    { Icon: HiCode, to: "/skills" },
   ];
 
   const footerLinks = [
@@ -34,23 +32,20 @@ export default function NavBar() {
     return (
       <div className="nb__main-container">
         <section id="nb__head-container">
-          <div id="nb__logo"></div>
+          <div id="nb__logo">
+            <img src={app_logo} alt="" />
+          </div>
         </section>
         <section id="nb__link-container">
-          {navLinks.map(({ Icon, to, active }, i) => (
+          {navLinks.map(({ Icon, to }, i) => (
             <Link
               key={i}
-              className={isActive(to, active) ? "nb__link-active" : "nb__link"}
+              className={isActive(to) ? "nb__link-active" : "nb__link"}
               to={to}
             >
               <Icon />
             </Link>
           ))}
-          {checkIfUserActive(state.user) ? (
-            <button onClick={signOutRequest}>
-              <HiLogout />
-            </button>
-          ) : null}
         </section>
         <section id="nb__footer-container">
           <div>

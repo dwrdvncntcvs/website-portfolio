@@ -2,9 +2,8 @@
 @import "../../index.scss";
 
 .h__main-container {
-  @extend .page-size;
-  display: flex;
-  flex-direction: row;
+  @extend .flex-row;
+  flex: 1;
 
   .h__left-container {
     display: flex;

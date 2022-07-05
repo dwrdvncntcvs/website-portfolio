@@ -1,0 +1,73 @@
+@import "../../variable.scss";
+@import "../../index.scss";
+
+.h__main-container {
+  @extend .page-size;
+  display: flex;
+  flex-direction: row;
+
+  .h__left-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    justify-content: center;
+    align-items: flex-start;
+
+    h3 {
+      color: $quaternary-color;
+      font-size: 5rem;
+      transform: translateY(35px);
+      pointer-events: none;
+    }
+
+    h1 {
+      color: $primary-color;
+      font-size: 6.5rem;
+      pointer-events: none;
+    }
+
+    p {
+      color: $quaternary-color;
+      font-size: 2rem;
+      pointer-events: none;
+    }
+    button {
+      transform: translateY(35px);
+
+      background: $quaternary-color;
+      border: none;
+      padding: 10px 20px;
+      width: 50%;
+      height: 60px;
+      font-size: 25px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: bold;
+      color: $secondary-color;
+      border-radius: 50px;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: all ease 0.2s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $quaternary-color;
+      }
+    }
+  }
+
+  .h__right-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    img {
+      width: auto;
+      height: 90%;
+      transform: translateX(20%);
+    }
+  }
+}

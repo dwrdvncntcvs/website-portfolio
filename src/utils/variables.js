@@ -10,6 +10,8 @@ import {
   SiPython,
   SiDjango,
   SiIonic,
+  SiFirebase,
+  SiPostgresql,
 } from "react-icons/si";
 
 const AUTH_VARIABLE = {
@@ -99,6 +101,14 @@ const TECHNICAL_ICON_VAR = [
   {
     value: SiIonic,
     ref: "ionic",
+  },
+  {
+    value: SiFirebase,
+    ref: "firebase",
+  },
+  {
+    value: SiPostgresql,
+    ref: "postgresql",
   },
 ];
 

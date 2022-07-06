@@ -4,6 +4,7 @@ import { getIcon } from "../../utils/helper";
 import { SKILL_TYPE_VAR } from "../../utils/variables";
 import "./skills.scss";
 import { Cog } from "../../assets/svgs";
+import { PageHeader } from "../../components";
 
 export default function Skills() {
   const { state, getSkillsData } = useSkillsContext();
@@ -15,10 +16,10 @@ export default function Skills() {
   return (
     <div className="s__main-container">
       <img src={Cog} alt="" />
-      <section id="s__intro-container">
-        <h1>skills.</h1>
-        <p>{state?.skillsData?.data?.description}</p>
-      </section>
+      <PageHeader
+        title={"skills"}
+        description={state?.skillsData?.data?.description}
+      />
       <section className="s__content-container">
         <section id="s__soft-skill-container">
           <h2>soft.</h2>

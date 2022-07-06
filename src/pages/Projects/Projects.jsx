@@ -1,5 +1,5 @@
 import React from "react";
-import "./projects.scss";
+import "./pageHeader.scss";
 
 export default function Projects() {
   return <div>Projects</div>;

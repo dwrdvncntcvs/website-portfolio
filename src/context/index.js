@@ -12,3 +12,8 @@ export {
   Context as SkillsContext,
   Provider as SkillsProvider,
 } from "./skillsContext";
+
+export {
+  Context as ProjectsContext,
+  Provider as ProjectsProvider,
+} from "./projectsContext";

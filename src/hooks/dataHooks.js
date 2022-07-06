@@ -1,5 +1,10 @@
 import { useContext } from "react";
-import { AuthContext, HomeContext, SkillsContext } from "../context";
+import {
+  AuthContext,
+  HomeContext,
+  ProjectsContext,
+  SkillsContext,
+} from "../context";
 
 const useAuth = () => {
   return useContext(AuthContext);
@@ -13,4 +18,8 @@ const useSkillsContext = () => {
   return useContext(SkillsContext);
 };
 
-export { useAuth, useHomeContext, useSkillsContext };
+const useProjectsContext = () => {
+  return useContext(ProjectsContext);
+};
+
+export { useAuth, useHomeContext, useSkillsContext, useProjectsContext };

@@ -42,6 +42,10 @@ const SKILLS_CONTEXT_VAR = {
   GET_SKILLS_DATA: "getSkillsData",
 };
 
+const PROJECTS_CONTEXT_VAR = {
+  GET_PROJECTS_DATA: "getProjectsData",
+};
+
 const SOFT_ICON_VAR = [
   {
     value: HiChatAlt2,
@@ -127,4 +131,5 @@ export {
   SOFT_ICON_VAR,
   SKILL_TYPE_VAR,
   TECHNICAL_ICON_VAR,
+  PROJECTS_CONTEXT_VAR,
 };

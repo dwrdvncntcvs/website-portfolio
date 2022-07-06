@@ -7,13 +7,12 @@
 
   .h__left-container {
     display: flex;
-    flex: 1;
+    flex: 3;
     flex-direction: column;
-    padding: 40px;
+    padding: 90px;
     position: relative;
     justify-content: center;
     align-items: flex-start;
-
     h3 {
       color: $quaternary-color;
       font-size: 5rem;
@@ -34,7 +33,6 @@
     }
     button {
       transform: translateY(35px);
-
       background: $quaternary-color;
       border: none;
       padding: 10px 20px;
@@ -59,7 +57,7 @@
 
   .h__right-container {
     display: flex;
-    flex: 1;
+    flex: 2;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;

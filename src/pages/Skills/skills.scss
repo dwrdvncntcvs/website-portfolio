@@ -1,45 +1,71 @@
 @import "../../variable.scss";
 @import "../../index.scss";
 
-.s__main-container {
-  @extend .flex-column;
-  @extend .page-size;
-  flex: 1;
-  padding: 50px;
-  position: relative;
+#s__floating-icon {
+  position: fixed;
+  align-self: flex-end;
+  transform: translateX(-60px) translateY(20px);
+  height: 200px;
+}
 
-  img {
-    position: fixed;
-    align-self: flex-end;
-    transform: translateX(-60px) translateY(20px);
-    height: 200px;
+.s__content-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  section {
+    h2 {
+      color: $quaternary-color;
+      font-size: 3rem;
+    }
   }
 
-  .s__content-container {
-    display: grid;
-    grid-template-columns: 50% 50%;
+  #s__soft-skill-container {
+    @extend .flex-column;
+    gap: 20px;
+    width: 100%;
 
-    section {
-      h2 {
+    div {
+      @extend .flex-row;
+      gap: 40px;
+      height: auto;
+      padding: 0px 150px 0px 50px;
+
+      #s__soft-icon {
+        width: 100px;
+        height: 100px;
         color: $quaternary-color;
-        font-size: 3rem;
+      }
+
+      p {
+        color: $quaternary-color;
+        font-size: 1.25rem;
+        span {
+          font-weight: bold;
+          color: $primary-color;
+        }
       }
     }
+  }
 
-    #s__soft-skill-container {
-      @extend .flex-column;
-      gap: 20px;
-      width: 100%;
+  #s__technical-skill-container {
+    @extend .flex-column;
+    gap: 20px;
+    width: 100%;
+
+    .s__grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 250px);
+      row-gap: 40px;
 
       div {
         @extend .flex-row;
-        gap: 40px;
+        gap: 10px;
         height: auto;
-        padding: 0px 150px 0px 50px;
+        align-items: center;
 
-        #s__soft-icon {
-          width: 100px;
-          height: 100px;
+        #technical-icon {
+          width: 55px;
+          height: 55px;
           color: $quaternary-color;
         }
 
@@ -49,40 +75,6 @@
           span {
             font-weight: bold;
             color: $primary-color;
-          }
-        }
-      }
-    }
-
-    #s__technical-skill-container {
-      @extend .flex-column;
-      gap: 20px;
-      width: 100%;
-
-      .s__grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 250px);
-        row-gap: 40px;
-
-        div {
-          @extend .flex-row;
-          gap: 10px;
-          height: auto;
-          align-items: center;
-
-          #technical-icon {
-            width: 55px;
-            height: 55px;
-            color: $quaternary-color;
-          }
-
-          p {
-            color: $quaternary-color;
-            font-size: 1.25rem;
-            span {
-              font-weight: bold;
-              color: $primary-color;
-            }
           }
         }
       }

@@ -4,7 +4,7 @@ import { getIcon } from "../../utils/helper";
 import { SKILL_TYPE_VAR } from "../../utils/variables";
 import "./skills.scss";
 import { Cog } from "../../assets/svgs";
-import { PageHeader } from "../../components";
+import { PageContainer, PageHeader } from "../../components";
 
 export default function Skills() {
   const { state, getSkillsData } = useSkillsContext();
@@ -14,8 +14,8 @@ export default function Skills() {
   }, []);
 
   return (
-    <div className="s__main-container">
-      <img src={Cog} alt="" />
+    <PageContainer>
+      <img id="s__floating-icon" src={Cog} alt="" />
       <PageHeader
         title={"skills"}
         description={state?.skillsData?.data?.description}
@@ -56,6 +56,6 @@ export default function Skills() {
           </div>
         </section>
       </section>
-    </div>
+    </PageContainer>
   );
 }

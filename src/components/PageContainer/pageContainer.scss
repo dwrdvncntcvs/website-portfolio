@@ -1,0 +1,9 @@
+@import "../../index.scss";
+
+.pc__main-container {
+  @extend .flex-column;
+  @extend .page-size;
+  flex: 1;
+  padding: 50px;
+  position: relative;
+}

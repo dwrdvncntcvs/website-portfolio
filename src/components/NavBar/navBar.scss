@@ -41,11 +41,11 @@
       height: $btn-60;
       @extend .flex-row;
       @extend .flex-center;
-      border-radius: 10px;
+      border-radius: 25px;
       transition: all ease 0.2s;
 
       &:hover {
-        color: $quaternary-color;
+        color: $primary-color;
         background-color: $secondary-color;
         border-radius: 100%;
       }
@@ -56,10 +56,7 @@
       color: $quaternary-color;
       background-color: $primary-color;
       border-radius: 100%;
-
-      &:hover {
-        background-color: $primary-color;
-      }
+      pointer-events: none;
     }
 
     button {

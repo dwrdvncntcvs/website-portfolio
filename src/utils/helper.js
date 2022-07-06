@@ -1,3 +1,5 @@
+import { SKILL_TYPE_VAR, SOFT_ICON_VAR, TECHNICAL_ICON_VAR } from "./variables";
+
 const accessLink = (path = "", user) => {
   return user ? `/admin${path}` : path;
 };
@@ -34,4 +36,16 @@ const checkIfUserActive = (user) => {
   return Object.keys(user).length >= 1;
 };
 
-export { accessLink, getAuthError, checkImageExt, checkIfUserActive };
+const getIcon = (iconName, type) => {
+  let icon = null;
+
+  if (type === SKILL_TYPE_VAR.SOFT)
+    icon = SOFT_ICON_VAR.filter((icon) => icon.ref === iconName)[0].value;
+
+  if (type === SKILL_TYPE_VAR.TECHNICAL)
+    icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName)[0].value;
+
+  return icon;
+};
+
+export { accessLink, getAuthError, checkImageExt, checkIfUserActive, getIcon };

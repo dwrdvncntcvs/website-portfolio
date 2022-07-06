@@ -7,3 +7,8 @@ export {
   Context as HomeContext,
   Provider as HomeProvider,
 } from "./homeContext";
+
+export {
+  Context as SkillsContext,
+  Provider as SkillsProvider,
+} from "./skillsContext";

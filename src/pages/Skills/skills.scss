@@ -1,2 +1,109 @@
 @import "../../variable.scss";
 @import "../../index.scss";
+
+.s__main-container {
+  @extend .flex-column;
+  @extend .page-size;
+  flex: 1;
+  padding: 50px;
+  position: relative;
+
+  img {
+    position: fixed;
+    align-self: flex-end;
+    transform: translateX(-60px) translateY(20px);
+    height: 200px;
+  }
+
+  #s__intro-container {
+    @extend .flex-column;
+    width: 50%;
+    margin-bottom: 35px;
+    h1 {
+      font-size: 5rem;
+      z-index: 1;
+      color: $primary-color;
+    }
+
+    p {
+      z-index: 1;
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: $quaternary-color;
+    }
+  }
+
+  .s__content-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    section {
+      h2 {
+        color: $quaternary-color;
+        font-size: 3rem;
+      }
+    }
+
+    #s__soft-skill-container {
+      @extend .flex-column;
+      gap: 20px;
+      width: 100%;
+
+      div {
+        @extend .flex-row;
+        gap: 40px;
+        height: auto;
+        padding: 0px 150px 0px 50px;
+
+        #s__soft-icon {
+          width: 100px;
+          height: 100px;
+          color: $quaternary-color;
+        }
+
+        p {
+          color: $quaternary-color;
+          font-size: 1.25rem;
+          span {
+            font-weight: bold;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    #s__technical-skill-container {
+      @extend .flex-column;
+      gap: 20px;
+      width: 100%;
+
+      .s__grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 250px);
+        row-gap: 40px;
+
+        div {
+          @extend .flex-row;
+          gap: 20px;
+          height: auto;
+          align-items: center;
+
+          #technical-icon {
+            width: 55px;
+            height: 55px;
+            color: $quaternary-color;
+          }
+
+          p {
+            color: $quaternary-color;
+            font-size: 1.25rem;
+            span {
+              font-weight: bold;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

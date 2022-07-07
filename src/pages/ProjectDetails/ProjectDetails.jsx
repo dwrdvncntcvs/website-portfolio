@@ -44,11 +44,11 @@ export default function ProjectDetails() {
         <section className="pd__technologies-container">
           <h1>technologies.</h1>
           <div className="pd__technologies-grid">
-            {data?.technologies?.map(({ icon, title, iconColor }, i) => {
-              const Icon = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
+            {data?.technologies?.map(({ icon, title }, i) => {
+              const {Icon, color} = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
               return (
                 <div id="pd__technology" key={i}>
-                  {Icon !== null ? <Icon id="pd__icon" color={`#${iconColor}`} /> : null}
+                  {Icon !== null ? <Icon id="pd__icon" color={color} /> : null}
                   <p>{title}</p>
                 </div>
               );

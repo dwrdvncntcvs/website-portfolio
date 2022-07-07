@@ -45,7 +45,14 @@ const getIcon = (iconName, type) => {
   if (type === SKILL_TYPE_VAR.TECHNICAL)
     icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName);
 
-  return icon.length > 0 ? icon[0].value : null;
+  console.log(icon);
+
+  let iconObj = {};
+
+  if (icon[0]["color" === undefined]) iconObj = { Icon: icon[0].value };
+  else iconObj = { Icon: icon[0].value, color: icon[0].color };
+
+  return icon.length > 0 ? iconObj : null;
 };
 
 export { accessLink, getAuthError, checkImageExt, checkIfUserActive, getIcon };

@@ -25,7 +25,7 @@ export default function Skills() {
           <h2>soft.</h2>
           {state?.skillsData?.data?.soft.map(
             ({ title, description, icon }, i) => {
-              const Icon = getIcon(icon, SKILL_TYPE_VAR.SOFT);
+              const { Icon } = getIcon(icon, SKILL_TYPE_VAR.SOFT);
               return (
                 <div key={i}>
                   <Icon id="s__soft-icon" />
@@ -43,11 +43,11 @@ export default function Skills() {
           <div className="s__grid-container">
             {state?.skillsData?.data?.technical.map(
               ({ icon, iconColor, title }, i) => {
-                const Icon = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
+                const { Icon, color } = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
 
                 return (
                   <div key={i}>
-                    <Icon id="technical-icon" color={`#${iconColor}`} />
+                    <Icon id="technical-icon" color={color} />
                     <p>{title}</p>
                   </div>
                 );

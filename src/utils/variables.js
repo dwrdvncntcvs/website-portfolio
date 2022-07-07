@@ -75,70 +75,87 @@ const TECHNICAL_ICON_VAR = [
   {
     value: SiReact,
     ref: "react",
+    color: "#61DAFB",
   },
   {
     value: SiNodedotjs,
     ref: "nodejs",
+    color: "#339933",
   },
   {
     value: SiJavascript,
     ref: "javascript",
+    color: "#F7DF1E",
   },
   {
     value: SiAngular,
     ref: "angularjs",
+    color: "#DD0031",
   },
   {
     value: SiSequelize,
     ref: "sequelize",
+    color: "#52B0E7",
   },
   {
     value: SiTypescript,
     ref: "typescript",
+    color: "#3178C6",
   },
   {
     value: SiExpress,
     ref: "express",
+    color: "#000000",
   },
   {
     value: SiPython,
     ref: "python",
+    color: "#3776AB",
   },
   {
     value: SiDjango,
     ref: "django",
+    color: "#092E20",
   },
   {
     value: SiIonic,
     ref: "ionic",
+    color: "#3880FF",
   },
   {
     value: SiFirebase,
     ref: "firebase",
+    color: "#FFCA28",
   },
   {
     value: SiPostgresql,
     ref: "postgresql",
+    color: "#4169E1",
   },
   {
     value: SiSass,
     ref: "sass",
+    color: "#CC6699",
   },
   {
     value: SiYarn,
     ref: "yarn",
+    color: "#2C8EBB",
   },
   {
     value: SiNpm,
     ref: "npm",
+    color: "#CB3837",
   },
   {
     value: SiCapacitor,
     ref: "capacitor",
+    color: "#119EFF",
   },
   {
     value: SiLeaflet,
     ref: "leaflet",
+    color: "#199900",
   },
 ];
 

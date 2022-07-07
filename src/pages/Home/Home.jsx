@@ -9,6 +9,8 @@ export default function Home() {
     getHomeData();
   }, []);
 
+  console.log(window.innerWidth + "" + window.innerHeight)
+
   return (
     <PageContainer>
       <div className="h__main-container">

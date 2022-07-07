@@ -1,0 +1,140 @@
+@import "../../variable.scss";
+@import "../../index.scss";
+
+main {
+  @extend .flex-column;
+  @extend .page-size;
+  flex: 1;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+
+  .pd__grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 50%);
+    grid-template-rows: repeat(auto-fill, 50%);
+    width: 75%;
+    height: 75%;
+    background-color: $secondary-color;
+    border-radius: 20px;
+    padding: 10px;
+    z-index: 1;
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      border-radius: 100%;
+      border: none;
+      background-color: $primary-color;
+      color: $quaternary-color;
+      transition: all ease 0.2s;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    section {
+      padding: 10px;
+    }
+
+    .pd__main-image-container {
+      display: flex;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: $tertiary-color;
+        border-radius: 20px;
+      }
+    }
+
+    .pd__description-container {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 4rem;
+        color: $primary-color;
+      }
+
+      p {
+        font-size: 1.25rem;
+        color: $quaternary-color;
+      }
+    }
+
+    .pd__technologies-container {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 3rem;
+        color: $quaternary-color;
+      }
+
+      .pd__technologies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 180px);
+        gap: 10px;
+        padding: 10px;
+
+        #pd__technology {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 10px 20px;
+          gap: 5px;
+          background-color: $tertiary-color;
+          border-radius: 50px;
+
+          #pd__icon {
+            width: 30px;
+            height: 30px;
+          }
+
+          p {
+            color: $quaternary-color;
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .pd__images-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 50%);
+      grid-template-rows: repeat(auto-fill, 50%);
+
+      div {
+        width: 95%;
+        height: 90%;
+        background-color: $tertiary-color;
+        gap: 5px;
+        border-radius: 20px;
+
+        img {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

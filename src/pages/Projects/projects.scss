@@ -1,0 +1,28 @@
+@import "../../variable.scss";
+@import "../../index.scss";
+
+.p__content-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  width: 100%;
+  gap: 20px;
+
+  .p__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border-radius: 20px;
+    background-color: $tertiary-color;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      // border: 5px solid $primary-color;
+      outline: 10px solid $primary-color;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -40,12 +40,12 @@ const getIcon = (iconName, type) => {
   let icon = null;
 
   if (type === SKILL_TYPE_VAR.SOFT)
-    icon = SOFT_ICON_VAR.filter((icon) => icon.ref === iconName)[0].value;
+    icon = SOFT_ICON_VAR.filter((icon) => icon.ref === iconName);
 
   if (type === SKILL_TYPE_VAR.TECHNICAL)
-    icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName)[0].value;
+    icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName);
 
-  return icon;
+  return icon.length > 0 ? icon[0].value : null;
 };
 
 export { accessLink, getAuthError, checkImageExt, checkIfUserActive, getIcon };

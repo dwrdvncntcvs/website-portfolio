@@ -12,6 +12,8 @@ import {
   SiIonic,
   SiFirebase,
   SiPostgresql,
+  SiSass,
+  SiYarn,
 } from "react-icons/si";
 
 const AUTH_VARIABLE = {
@@ -44,6 +46,7 @@ const SKILLS_CONTEXT_VAR = {
 
 const PROJECTS_CONTEXT_VAR = {
   GET_PROJECTS_DATA: "getProjectsData",
+  GET_PROJECTS_DETAILS_DATA: "getProjectDetailsData",
 };
 
 const SOFT_ICON_VAR = [
@@ -113,6 +116,14 @@ const TECHNICAL_ICON_VAR = [
   {
     value: SiPostgresql,
     ref: "postgresql",
+  },
+  {
+    value: SiSass,
+    ref: "sass",
+  },
+  {
+    value: SiYarn,
+    ref: "yarn",
   },
 ];
 

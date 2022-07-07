@@ -14,6 +14,9 @@ import {
   SiPostgresql,
   SiSass,
   SiYarn,
+  SiNpm,
+  SiCapacitor,
+  SiLeaflet,
 } from "react-icons/si";
 
 const AUTH_VARIABLE = {
@@ -124,6 +127,18 @@ const TECHNICAL_ICON_VAR = [
   {
     value: SiYarn,
     ref: "yarn",
+  },
+  {
+    value: SiNpm,
+    ref: "npm",
+  },
+  {
+    value: SiCapacitor,
+    ref: "capacitor",
+  },
+  {
+    value: SiLeaflet,
+    ref: "leaflet",
   },
 ];
 

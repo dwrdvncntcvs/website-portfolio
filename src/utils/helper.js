@@ -53,4 +53,15 @@ const getIcon = (iconName, type) => {
   return icon.length > 0 ? iconObj : null;
 };
 
-export { accessLink, getAuthError, checkImageExt, checkIfUserActive, getIcon };
+const navigateLink = (link) => {
+  window.open(link);
+};
+
+export {
+  accessLink,
+  getAuthError,
+  checkImageExt,
+  checkIfUserActive,
+  getIcon,
+  navigateLink,
+};

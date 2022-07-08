@@ -23,7 +23,24 @@
     }
 
     button {
-        background-color: rgba(255, 0, 0, 0.401);
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      border-radius: 100%;
+      border: none;
+      background-color: rgba(255, 0, 0, 0.266);
+      color: $quaternary-color;
+      transition: all ease 0.2s;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 

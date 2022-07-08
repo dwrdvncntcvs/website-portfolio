@@ -17,6 +17,7 @@ import {
   SiNpm,
   SiCapacitor,
   SiLeaflet,
+  SiGithub,
 } from "react-icons/si";
 
 const AUTH_VARIABLE = {
@@ -115,7 +116,7 @@ const TECHNICAL_ICON_VAR = [
   {
     value: SiDjango,
     ref: "django",
-    color: "#092E20",
+    color: "#2ba977",
   },
   {
     value: SiIonic,

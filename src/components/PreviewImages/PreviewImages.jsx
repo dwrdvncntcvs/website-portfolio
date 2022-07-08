@@ -10,11 +10,6 @@ export default function PreviewImages({
 }) {
   const [preview, setPreview] = previewState;
 
-  console.log("Images: ", images);
-  console.log("Main Image: ", mainImage);
-  console.log("Preview State: ", previewState);
-  console.log("Image Id: ", imageId);
-
   const rearrangeImage = () => {
     const imagesArr = images.filter((image) => image !== mainImage);
     imagesArr.unshift(mainImage);
@@ -31,12 +26,12 @@ export default function PreviewImages({
     <div className="pi__main-container">
       <div className="pi__image-prev">
         <button onClick={closeAction}>
-          <HiX /  >
+          <HiX />
         </button>
         <img src={mainImage} alt="" />
       </div>
-      <button id="pi__left"></button>
-      <button id="pi__right"></button>
+      {/* <button id="pi__left"></button>
+      <button id="pi__right"></button> */}
     </div>
   );
 }

@@ -31,6 +31,7 @@
     @extend .flex-center;
     @extend .flex-column;
     gap: 10px;
+    position: relative;
 
     .nb__link {
       color: $tertiary-color;

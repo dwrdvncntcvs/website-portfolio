@@ -5,6 +5,7 @@ import { HiHome, HiCode, HiFolder } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
 import { app_logo } from "../../assets/images";
+import Tooltip from "../Tooltip/Tooltip";
 
 export default function NavBar() {
   const location = useLocation();
@@ -14,9 +15,9 @@ export default function NavBar() {
   };
 
   const navLinks = [
-    { Icon: HiHome, to: "/" },
-    { Icon: HiCode, to: "/skills" },
-    { Icon: HiFolder, to: "/projects" },
+    { Icon: HiHome, to: "/", title: "Home" },
+    { Icon: HiCode, to: "/skills", title: "Skills" },
+    { Icon: HiFolder, to: "/projects", title: "Portfolio" },
   ];
 
   const footerLinks = [
@@ -33,14 +34,16 @@ export default function NavBar() {
         </div>
       </section>
       <section id="nb__link-container">
-        {navLinks.map(({ Icon, to }, i) => (
-          <Link
-            key={i}
-            className={isActive(to) ? "nb__link-active" : "nb__link"}
-            to={to}
-          >
-            <Icon />
-          </Link>
+        {navLinks.map(({ Icon, to, title }, i) => (
+          <Tooltip title={title}>
+            <Link
+              key={i}
+              className={isActive(to) ? "nb__link-active" : "nb__link"}
+              to={to}
+            >
+              <Icon />
+            </Link>
+          </Tooltip>
         ))}
       </section>
       <section id="nb__footer-container">

@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useProjectsContext } from "../../hooks/dataHooks";
 import { getIcon } from "../../utils/helper";
 import { SKILL_TYPE_VAR } from "../../utils/variables";
 import { HiX } from "react-icons/hi";
 import "./projectDetails.scss";
+import { PreviewImages } from "../../components";
 
 export default function ProjectDetails() {
   const { state, getProjectDetailsData, setProjectDetails } =
     useProjectsContext();
+
+  const [preview, setPreview] = useState(false);
+  const [image, setImage] = useState("");
+  const [imageId, setImageId] = useState("");
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -45,7 +50,7 @@ export default function ProjectDetails() {
           <h1>technologies.</h1>
           <div className="pd__technologies-grid">
             {data?.technologies?.map(({ icon, title }, i) => {
-              const {Icon, color} = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
+              const { Icon, color } = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
               return (
                 <div id="pd__technology" key={i}>
                   {Icon !== null ? <Icon id="pd__icon" color={color} /> : null}
@@ -56,12 +61,30 @@ export default function ProjectDetails() {
           </div>
         </section>
         <section className="pd__images-container">
-          {data?.images?.map((image, i) => (
-            image.length > 0 && <div key={i}>
-            <img src={image} alt={`${id}-${i}`} />
-          </div>
-          ))}
+          {data?.images?.map(
+            (image, i) =>
+              image.length > 0 && (
+                <div
+                  key={i}
+                  onClick={() => {
+                    setPreview(true);
+                    setImage(image);
+                    setImageId(i);
+                  }}
+                >
+                  <img src={image} alt={`${id}-${i}`} />
+                </div>
+              )
+          )}
         </section>
+        {preview && (
+          <PreviewImages
+            images={data?.images}
+            previewState={[preview, setPreview]}
+            imageId={imageId}
+            mainImage={image}
+          />
+        )}
       </div>
     </main>
   );

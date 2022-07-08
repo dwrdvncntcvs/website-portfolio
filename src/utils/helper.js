@@ -45,8 +45,6 @@ const getIcon = (iconName, type) => {
   if (type === SKILL_TYPE_VAR.TECHNICAL)
     icon = TECHNICAL_ICON_VAR.filter((icon) => icon.ref === iconName);
 
-  console.log(icon);
-
   let iconObj = {};
 
   if (icon[0]["color" === undefined]) iconObj = { Icon: icon[0].value };

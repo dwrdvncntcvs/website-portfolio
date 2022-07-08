@@ -17,7 +17,8 @@ import {
   SiNpm,
   SiCapacitor,
   SiLeaflet,
-  SiGithub,
+  SiHtml5,
+  SiCss3,
 } from "react-icons/si";
 
 const AUTH_VARIABLE = {
@@ -157,6 +158,16 @@ const TECHNICAL_ICON_VAR = [
     value: SiLeaflet,
     ref: "leaflet",
     color: "#199900",
+  },
+  {
+    value: SiHtml5,
+    ref: "html5",
+    color: "#E34F26",
+  },
+  {
+    value: SiCss3,
+    ref: "css3",
+    color: "#1572B6",
   },
 ];
 

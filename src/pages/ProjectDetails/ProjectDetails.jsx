@@ -58,7 +58,7 @@ export default function ProjectDetails() {
         <section className="pd__images-container">
           {data?.images?.map((image, i) => (
             image.length > 0 && <div key={i}>
-            <img src={image} alt="" />
+            <img src={image} alt={`${id}-${i}`} />
           </div>
           ))}
         </section>

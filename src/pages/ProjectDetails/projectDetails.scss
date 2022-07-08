@@ -23,7 +23,7 @@ main {
     height: 75%;
     background-color: $secondary-color;
     border-radius: 20px;
-    padding: 10px;
+    padding: 20px;
     z-index: 1;
     position: relative;
 
@@ -90,6 +90,8 @@ main {
     .pd__description-container {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      padding: 30px;
 
       h1 {
         font-size: 4rem;
@@ -99,6 +101,8 @@ main {
       p {
         font-size: 1.25rem;
         color: $quaternary-color;
+        font-weight: bold;
+        text-align: left;
       }
     }
 

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./projects.scss";
-import { PageContainer, PageHeader } from "../../components";
+import { FloatingImage, PageContainer, PageHeader } from "../../components";
 import { useProjectsContext } from "../../hooks/dataHooks";
 import { Link, Outlet } from "react-router-dom";
+import { Folders } from "../../assets/svgs";
 
 export default function Projects() {
   const { state, getProjectData } = useProjectsContext();
@@ -16,6 +17,7 @@ export default function Projects() {
 
   return (
     <PageContainer>
+      <FloatingImage src={Folders} alt="floating-folders" />
       <PageHeader
         title={"portfolio"}
         description={state?.projectData?.data?.description}

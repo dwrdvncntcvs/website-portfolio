@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useProjectsContext } from "../../hooks/dataHooks";
-import { getIcon } from "../../utils/helper";
+import { getIcon, navigateLink } from "../../utils/helper";
 import { SKILL_TYPE_VAR } from "../../utils/variables";
 import { HiX } from "react-icons/hi";
+import { SiGithub } from "react-icons/si";
 import "./projectDetails.scss";
 import { PreviewImages } from "../../components";
+import { Link } from "react-router-dom";
 
 export default function ProjectDetails() {
   const { state, getProjectDetailsData, setProjectDetails } =
@@ -32,15 +34,24 @@ export default function ProjectDetails() {
   };
 
   const data = state?.projectDetailsData?.data;
+  console.log(data);
 
   return (
     <main>
       <div className="pd__grid-container">
-        <button onClick={goBack}>
+        <button id="pd__back-btn" onClick={goBack}>
           <HiX />
         </button>
         <section className="pd__main-image-container">
           <img src={data?.mainImage} alt="" />
+          {data?.repository.length > 0 && (
+            <button
+              id="pd__repo-btn"
+              onClick={() => navigateLink(data?.repository)}
+            >
+              <SiGithub />
+            </button>
+          )}
         </section>
         <section className="pd__description-container">
           <h1>description.</h1>
@@ -86,6 +97,11 @@ export default function ProjectDetails() {
           />
         )}
       </div>
+      {data?.appLink?.length > 0 && (
+        <a className="pd__link-container" href={`${data?.appLink}`}>
+          {data?.appLink}
+        </a>
+      )}
     </main>
   );
 }

@@ -18,7 +18,7 @@ export default function NavBar() {
     { Icon: HiHome, to: "/", title: "Home" },
     { Icon: HiCode, to: "/skills", title: "Skills" },
     { Icon: HiFolder, to: "/projects", title: "Portfolio" },
-    { Icon: HiPhone, to: "/contact-me", title: "Contact" },
+    { Icon: HiPhone, to: "/contact-me", title: "Contact Me" },
   ];
 
   const footerLinks = [

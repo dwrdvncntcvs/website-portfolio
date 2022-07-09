@@ -54,6 +54,10 @@ const PROJECTS_CONTEXT_VAR = {
   GET_PROJECTS_DETAILS_DATA: "getProjectDetailsData",
 };
 
+const CONTACT_CONTEXT_VAR = {
+  GET_CONTACT_DATA: "getContactData",
+};
+
 const SOFT_ICON_VAR = [
   {
     value: HiChatAlt2,
@@ -187,4 +191,5 @@ export {
   SKILL_TYPE_VAR,
   TECHNICAL_ICON_VAR,
   PROJECTS_CONTEXT_VAR,
+  CONTACT_CONTEXT_VAR,
 };

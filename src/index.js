@@ -5,6 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import {
   AuthProvider,
+  ContactProvider,
   HomeProvider,
   ProjectsProvider,
   SkillsProvider,
@@ -16,9 +17,11 @@ root.render(
     <HomeProvider>
       <SkillsProvider>
         <ProjectsProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <ContactProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </ContactProvider>
         </ProjectsProvider>
       </SkillsProvider>
     </HomeProvider>

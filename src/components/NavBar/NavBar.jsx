@@ -1,7 +1,7 @@
 import React from "react";
 import "./navBar.scss";
 import { Link, useLocation } from "react-router-dom";
-import { HiHome, HiCode, HiFolder } from "react-icons/hi";
+import { HiHome, HiCode, HiFolder, HiPhone } from "react-icons/hi";
 import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
 import { app_logo } from "../../assets/images";
@@ -18,6 +18,7 @@ export default function NavBar() {
     { Icon: HiHome, to: "/", title: "Home" },
     { Icon: HiCode, to: "/skills", title: "Skills" },
     { Icon: HiFolder, to: "/projects", title: "Portfolio" },
+    {Icon: HiPhone, to: "/contact-me", title: "Contact"}
   ];
 
   const footerLinks = [

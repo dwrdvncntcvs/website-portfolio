@@ -1,0 +1,114 @@
+@import "../../variable.scss";
+@import "../../index.scss";
+
+.cf__form-container {
+  @extend .flex-column;
+  gap: 20px;
+  padding-right: 20px;
+  padding: 0px 50px 0px 25px;
+  justify-content: center;
+
+  .cf__grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50px 50px;
+    gap: 10px;
+    box-sizing: border-box;
+
+    .start-2-col {
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .end-2-col {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .full-col {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    textarea {
+      box-sizing: border-box;
+      display: flex;
+      width: 100%;
+      height: 300px;
+      resize: none;
+      font-family: verdana, arial, helvetica;
+      font-size: 20px;
+      padding: 1rem 0;
+      border: 3px solid $quaternary-color;
+      padding: 20px;
+      transition: all ease-in-out 0.2s;
+      border: 3px solid $quaternary-color;
+      border-radius: 10px;
+      background-color: $secondary-color;
+      color: $quaternary-color;
+      &:hover {
+        outline: 5px solid $primary-color;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+      }
+    }
+
+    .cf__form-group {
+      @extend .flex-row;
+
+      input {
+        flex: 1;
+        height: 50px;
+        font-size: 1.2rem;
+        padding: 20px;
+        border: 3px solid $quaternary-color;
+        border-radius: 10px;
+        background-color: $secondary-color;
+        color: $quaternary-color;
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          outline: 5px solid $primary-color;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+
+      label {
+        position: absolute;
+        color: $quaternary-color;
+      }
+    }
+  }
+
+  #cf__submit-btn {
+    display: flex;
+    width: 350px;
+    height: 50px;
+    border-radius: 30px;
+    border: none;
+    background-color: $quaternary-color;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: $secondary-color;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: sans-serif;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      color: $quaternary-color;
+      letter-spacing: 5px;
+      background-color: $primary-color;
+    }
+  }
+}

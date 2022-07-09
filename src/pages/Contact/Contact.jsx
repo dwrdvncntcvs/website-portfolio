@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Map, PageContainer, PageHeader } from "../../components";
+import { ContactForm, Map, PageContainer, PageHeader } from "../../components";
 import { useContactContext } from "../../hooks/dataHooks";
 import "./contact.scss";
 
@@ -23,11 +23,10 @@ export default function Contact() {
 
   return (
     <PageContainer>
-      <PageHeader title={"contact me"} description={data?.description} />
-
       <div className="c__grid-container">
         <section>
-          <h1>Input Fields</h1>
+          <PageHeader title={"contact me"} description={data?.description} />
+          <ContactForm />
         </section>
         <section>
           {locationObj.longitude !== undefined &&

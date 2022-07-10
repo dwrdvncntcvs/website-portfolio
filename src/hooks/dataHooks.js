@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import {
   AuthContext,
+  ContactContext,
   HomeContext,
   ProjectsContext,
   SkillsContext,
@@ -22,4 +23,14 @@ const useProjectsContext = () => {
   return useContext(ProjectsContext);
 };
 
-export { useAuth, useHomeContext, useSkillsContext, useProjectsContext };
+const useContactContext = () => {
+  return useContext(ContactContext);
+};
+
+export {
+  useAuth,
+  useHomeContext,
+  useSkillsContext,
+  useProjectsContext,
+  useContactContext,
+};

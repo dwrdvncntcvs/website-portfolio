@@ -17,3 +17,8 @@ export {
   Context as ProjectsContext,
   Provider as ProjectsProvider,
 } from "./projectsContext";
+
+export {
+  Context as ContactContext,
+  Provider as ContactProvider,
+} from "./contactContext";

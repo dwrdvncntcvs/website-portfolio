@@ -1,13 +1,6 @@
 @import "../../variable.scss";
 @import "../../index.scss";
 
-#s__floating-icon {
-  position: fixed;
-  align-self: flex-end;
-  transform: translateX(-60px) translateY(20px);
-  height: 200px;
-}
-
 .s__content-container {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -16,6 +9,15 @@
     h2 {
       color: $quaternary-color;
       font-size: 3rem;
+      transition: all ease 0.2s;
+
+      @include MDdesktop {
+        font-size: 2.5rem;
+      }
+
+      @include desktop {
+        font-size: 1.75rem;
+      }
     }
   }
 
@@ -23,25 +25,64 @@
     @extend .flex-column;
     gap: 20px;
     width: 100%;
+    transition: all ease 0.2s;
+
+    @include MDdesktop {
+      gap: 5px;
+    }
+
+    @include desktop {
+      gap: 0px;
+    }
 
     div {
       @extend .flex-row;
       gap: 40px;
       height: auto;
       padding: 0px 150px 0px 50px;
+      justify-content: center;
+      align-items: center;
+
+      @include MDdesktop {
+        font-size: 1rem;
+      }
+
+      @include desktop {
+        padding-right: 100px;
+      }
 
       #s__soft-icon {
         width: 100px;
         height: 100px;
         color: $quaternary-color;
+        transition: all ease 0.2s;
+
+        @include MDdesktop {
+          width: 90px;
+          height: 90px;
+        }
+
+        @include desktop {
+          width: 80px;
+          height: 80px;
+        }
       }
 
       p {
         color: $quaternary-color;
         font-size: 1.25rem;
+        transition: all ease 0.2s;
         span {
           font-weight: bold;
           color: $primary-color;
+        }
+
+        @include MDdesktop {
+          font-size: 1rem;
+        }
+
+        @include desktop {
+          font-size: 0.8rem;
         }
       }
     }
@@ -54,8 +95,16 @@
 
     .s__grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 250px);
+      grid-template-columns: repeat(auto-fill, 25%);
       row-gap: 40px;
+
+      @include MDdesktop {
+        grid-template-columns: repeat(auto-fill, 25%);
+      }
+
+      @include desktop {
+        grid-template-columns: repeat(auto-fill, 120px);
+      }
 
       div {
         @extend .flex-row;
@@ -67,11 +116,29 @@
           width: 55px;
           height: 55px;
           color: $quaternary-color;
+
+          @include MDdesktop {
+            width: 45px;
+            height: 45px;
+          }
+
+          @include desktop {
+            width: 35px;
+            height: 35px;
+          }
         }
 
         p {
           color: $quaternary-color;
           font-size: 1.25rem;
+
+          @include MDdesktop {
+            font-size: 1rem;
+          }
+
+          @include desktop {
+            font-size: 0.75rem;
+          }
           span {
             font-weight: bold;
             color: $primary-color;

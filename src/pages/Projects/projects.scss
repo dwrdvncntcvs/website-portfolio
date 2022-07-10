@@ -6,6 +6,15 @@
   grid-template-columns: repeat(auto-fill, 300px);
   width: 100%;
   gap: 20px;
+  z-index: 1;
+
+  @include MDdesktop {
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(auto-fill, 200px);
+  }
 
   .p__image-container {
     display: flex;
@@ -15,6 +24,14 @@
     border-radius: 20px;
     background-color: $tertiary-color;
     transition: all ease-in-out 0.2s;
+
+    @include MDdesktop {
+      height: 400px;
+    }
+
+    @include desktop {
+      height: 300px;
+    }
 
     &:hover {
       // border: 5px solid $primary-color;

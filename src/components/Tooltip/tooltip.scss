@@ -11,10 +11,20 @@
     background-color: $quaternary-color;
     padding: 5px 15px;
     color: $secondary-color;
-    font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border-radius: 10px;
     z-index: 1000;
     border: 5px solid $secondary-color;
+    white-space: nowrap;
+
+    @include MDdesktop {
+      margin: 0px 55px;
+      font-size: .85rem;
+    }
+
+    @include desktop {
+      margin: 0px 45px;
+      font-size: .75rem;
+    }
   }
 }

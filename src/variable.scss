@@ -4,6 +4,42 @@ $tertiary-color: #393e46;
 $quaternary-color: #eeeeee;
 
 $btn-60: 60px;
-$btn-font-size-c: 30px; 
+$btn-font-size-c: 30px;
 
 $logo-size: 80px;
+
+$LGdesktop: 1920px;
+$MDdesktop: 1600px;
+$desktop: 1366px;
+$tablet: 768px;
+$phone: 360px;
+
+@mixin LGdesktop {
+  @media (max-width: #{$LGdesktop}) and (min-width: #{$MDdesktop}) {
+    @content;
+  }
+}
+
+@mixin MDdesktop {
+  @media (max-width: #{$MDdesktop}) and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) and (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) and (min-width: #{$phone}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: #{$phone}) {
+    @content;
+  }
+}

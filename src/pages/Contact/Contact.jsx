@@ -25,7 +25,7 @@ export default function Contact() {
     <PageContainer>
       <div className="c__grid-container">
         <section>
-          <PageHeader title={"contact me"} description={data?.description} />
+          <PageHeader className="c__full-header" title={"contact me"} description={data?.description} />
           <ContactForm />
         </section>
         <section>

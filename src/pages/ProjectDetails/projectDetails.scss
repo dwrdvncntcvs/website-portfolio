@@ -161,6 +161,8 @@ main {
     .pd__technologies-container {
       display: flex;
       flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
 
       h1 {
         font-size: 3rem;

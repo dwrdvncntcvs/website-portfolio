@@ -5,6 +5,16 @@
   @extend .flex-column;
   width: 120px;
   background-color: $tertiary-color;
+  transition: all ease 0.2s;
+
+  //Media Queries
+  @include MDdesktop {
+    width: 100px;
+  }
+
+  @include desktop {
+    width: 90px;
+  }
 
   #nb__head-container {
     flex: 1;
@@ -17,6 +27,18 @@
       height: $logo-size;
       background-color: $secondary-color;
       border-radius: 100%;
+      transition: all ease 0.2s;
+
+      //Media Queries
+      @include MDdesktop {
+        width: 70px;
+        height: 70px;
+      }
+
+      @include desktop {
+        width: 60px;
+        height: 60px;
+      }
 
       img {
         display: flex;
@@ -49,6 +71,21 @@
         color: $primary-color;
         background-color: $secondary-color;
         border-radius: 100%;
+      }
+
+      //Media Queries
+      @include MDdesktop {
+        width: 50px;
+        font-size: 25px;
+        height: 50px;
+        border-radius: 20px;
+      }
+
+      @include desktop {
+        width: 40px;
+        font-size: 20px;
+        height: 40px;
+        border-radius: 15px;
       }
     }
 
@@ -83,8 +120,17 @@
     flex: 1;
     @extend .flex-center;
     @extend .flex-column;
-    font-size: 12px;
-    gap: 10px;
+    font-size: 14px;
+    gap: 20px;
+
+    //Media Queries
+    @include MDdesktop {
+      font-size: 11px;
+    }
+
+    @include desktop {
+      font-size: 10px;
+    }
 
     p:nth-child(1) {
       color: $quaternary-color;
@@ -102,6 +148,15 @@
         font-size: 18px;
         cursor: pointer;
         transition: all ease 0.2s;
+
+        //Media Queries
+        @include MDdesktop {
+          font-size: 16px;
+        }
+
+        @include desktop {
+          font-size: 14px;
+        }
       }
     }
   }

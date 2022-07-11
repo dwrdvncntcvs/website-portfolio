@@ -16,9 +16,11 @@ export default function Home() {
           <h3>{state?.data?.greetings}</h3>
           <h1>{state?.data?.name}</h1>
           <p>{state?.data?.description}</p>
-          <button onClick={() => window.open(state?.data?.resume)}>
-            Resume
-          </button>
+          {state?.data?.resume && (
+            <button onClick={() => window.open(state?.data?.resume)}>
+              Resume
+            </button>
+          )}
         </section>
         <section className="h__right-container">
           <img src={state?.data?.image} alt="main" />

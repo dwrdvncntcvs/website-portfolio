@@ -24,16 +24,24 @@ export default function Contact() {
   return (
     <PageContainer>
       <div className="c__grid-container">
-        <section>
-          <PageHeader className="c__full-header" title={"contact me"} description={data?.description} />
-          <ContactForm />
-        </section>
-        <section>
-          {locationObj.longitude !== undefined &&
-          locationObj.latitude !== undefined ? (
-            <Map location={locationObj} popup={data?.map?.popup} />
-          ) : null}
-        </section>
+        {data?.description && (
+          <section>
+            <PageHeader
+              className="c__full-header"
+              title={"contact me"}
+              description={data?.description}
+            />
+            <ContactForm />
+          </section>
+        )}
+        {data?.map && (
+          <section>
+            {locationObj.longitude !== undefined &&
+            locationObj.latitude !== undefined ? (
+              <Map location={locationObj} popup={data?.map?.popup} />
+            ) : null}
+          </section>
+        )}
       </div>
     </PageContainer>
   );

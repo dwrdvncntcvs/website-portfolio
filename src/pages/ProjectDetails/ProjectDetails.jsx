@@ -42,35 +42,43 @@ export default function ProjectDetails() {
         <button id="pd__back-btn" onClick={goBack}>
           <HiX />
         </button>
-        <section className="pd__main-image-container">
-          <img src={data?.mainImage} alt="" />
-          {data?.repository.length > 0 && (
-            <button
-              id="pd__repo-btn"
-              onClick={() => navigateLink(data?.repository)}
-            >
-              <SiGithub />
-            </button>
-          )}
-        </section>
-        <section className="pd__description-container">
-          <h1>description.</h1>
-          <p>{data?.description}</p>
-        </section>
-        <section className="pd__technologies-container">
-          <h1>technologies.</h1>
-          <div className="pd__technologies-grid">
-            {data?.technologies?.map(({ icon, title }, i) => {
-              const { Icon, color } = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
-              return (
-                <div id="pd__technology" key={i}>
-                  {Icon !== null ? <Icon id="pd__icon" color={color} /> : null}
-                  <p>{title}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        {data?.mainImage && (
+          <section className="pd__main-image-container">
+            <img src={data?.mainImage} alt="" />
+            {data?.repository.length > 0 && (
+              <button
+                id="pd__repo-btn"
+                onClick={() => navigateLink(data?.repository)}
+              >
+                <SiGithub />
+              </button>
+            )}
+          </section>
+        )}
+        {data?.description && (
+          <section className="pd__description-container">
+            <h1>description.</h1>
+            <p>{data?.description}</p>
+          </section>
+        )}
+        {data?.technologies && (
+          <section className="pd__technologies-container">
+            <h1>technologies.</h1>
+            <div className="pd__technologies-grid">
+              {data?.technologies?.map(({ icon, title }, i) => {
+                const { Icon, color } = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
+                return (
+                  <div id="pd__technology" key={i}>
+                    {Icon !== null ? (
+                      <Icon id="pd__icon" color={color} />
+                    ) : null}
+                    <p>{title}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        )}
         <section className="pd__images-container">
           {data?.images?.map(
             (image, i) =>

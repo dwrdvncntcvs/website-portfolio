@@ -1,4 +1,9 @@
-import { SKILL_TYPE_VAR, SOFT_ICON_VAR, TECHNICAL_ICON_VAR } from "./variables";
+import {
+  API_URL,
+  SKILL_TYPE_VAR,
+  SOFT_ICON_VAR,
+  TECHNICAL_ICON_VAR,
+} from "./variables";
 
 const accessLink = (path = "", user) => {
   return user ? `/admin${path}` : path;
@@ -57,6 +62,10 @@ const navigateLink = (link) => {
   window.open(link);
 };
 
+const url = (link) => {
+  return `${API_URL.MAILER}${link}`;
+};
+
 export {
   accessLink,
   getAuthError,
@@ -64,4 +73,5 @@ export {
   checkIfUserActive,
   getIcon,
   navigateLink,
+  url,
 };

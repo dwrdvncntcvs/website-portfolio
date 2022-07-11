@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useContactContext } from "../../hooks/dataHooks";
 import "./contactForm.scss";
 
 export default function ContactForm() {
+  const { sendEmailRequest } = useContactContext();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -31,7 +33,14 @@ export default function ContactForm() {
     },
   ];
 
-  const sendAction = (e) => {
+  const getDefault = () => {
+    setName("");
+    setEmail("");
+    setSubject("");
+    setMessage("");
+  };
+
+  const sendAction = async (e) => {
     e.preventDefault();
     const body = {
       name,
@@ -40,7 +49,8 @@ export default function ContactForm() {
       message,
     };
 
-    console.log(body);
+    await sendEmailRequest(body);
+    getDefault();
   };
 
   return (

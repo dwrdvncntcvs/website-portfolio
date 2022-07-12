@@ -21,6 +21,11 @@ import {
   SiCss3,
 } from "react-icons/si";
 
+const API_URL = {
+  MAILER: "https://portfolio-mailer-app.herokuapp.com",
+  // MAILER: "http://localhost:5000",
+};
+
 const AUTH_VARIABLE = {
   SET_ERROR: "setError",
   SET_ACCESS: "setAccess",
@@ -56,6 +61,8 @@ const PROJECTS_CONTEXT_VAR = {
 
 const CONTACT_CONTEXT_VAR = {
   GET_CONTACT_DATA: "getContactData",
+  GET_CONTACT_EMAIL_RES: "getContactEmailRes",
+  GET_CONTACT_EMAIL_ERR: "getContactEmailErr",
 };
 
 const SOFT_ICON_VAR = [
@@ -192,4 +199,5 @@ export {
   TECHNICAL_ICON_VAR,
   PROJECTS_CONTEXT_VAR,
   CONTACT_CONTEXT_VAR,
+  API_URL,
 };

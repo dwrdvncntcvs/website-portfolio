@@ -18,10 +18,9 @@ export default function Projects() {
   return (
     <PageContainer>
       <FloatingImage src={Folders} alt="floating-folders" />
-      <PageHeader
-        title={"portfolio"}
-        description={state?.projectData?.data?.description}
-      />
+      {data?.description && (
+        <PageHeader title={"portfolio"} description={data?.description} />
+      )}
       <section className="p__content-container">
         {data?.projects.map(({ imageUrl, id }, i) => (
           <Link

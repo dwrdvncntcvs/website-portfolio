@@ -13,18 +13,19 @@ export default function Skills() {
     getSkillsData();
   }, []);
 
+  const data = state?.skillsData?.data;
+
   return (
     <PageContainer>
-      <FloatingImage src={Cog} alt="floating-cog"/>
-      <PageHeader
-        title={"skills"}
-        description={state?.skillsData?.data?.description}
-      />
+      <FloatingImage src={Cog} alt="floating-cog" />
+      {data?.description && (
+        <PageHeader title={"skills"} description={data?.description} />
+      )}
       <section className="s__content-container">
-        <section id="s__soft-skill-container">
-          <h2>soft.</h2>
-          {state?.skillsData?.data?.soft.map(
-            ({ title, description, icon }, i) => {
+        {data?.soft && (
+          <section id="s__soft-skill-container">
+            <h2>soft.</h2>
+            {data?.soft.map(({ title, description, icon }, i) => {
               const { Icon } = getIcon(icon, SKILL_TYPE_VAR.SOFT);
               return (
                 <div key={i}>
@@ -35,14 +36,14 @@ export default function Skills() {
                   </p>
                 </div>
               );
-            }
-          )}
-        </section>
-        <section id="s__technical-skill-container">
-          <h2>technical.</h2>
-          <div className="s__grid-container">
-            {state?.skillsData?.data?.technical.map(
-              ({ icon, iconColor, title }, i) => {
+            })}
+          </section>
+        )}
+        {data?.technical && (
+          <section id="s__technical-skill-container">
+            <h2>technical.</h2>
+            <div className="s__grid-container">
+              {data?.technical.map(({ icon, iconColor, title }, i) => {
                 const { Icon, color } = getIcon(icon, SKILL_TYPE_VAR.TECHNICAL);
 
                 return (
@@ -51,10 +52,10 @@ export default function Skills() {
                     <p>{title}</p>
                   </div>
                 );
-              }
-            )}
-          </div>
-        </section>
+              })}
+            </div>
+          </section>
+        )}
       </section>
     </PageContainer>
   );

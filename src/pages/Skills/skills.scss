@@ -4,6 +4,12 @@
 .s__content-container {
   display: grid;
   grid-template-columns: 50% 50%;
+  gap: 10px;
+
+  @include LGtablet {
+    grid-template-columns: 100%;
+    gap: 30px;
+  }
 
   section {
     h2 {
@@ -18,53 +24,72 @@
       @include desktop {
         font-size: 1.75rem;
       }
+
+      @include LGtablet {
+        font-size: 2rem;
+      }
     }
   }
 
   #s__soft-skill-container {
     @extend .flex-column;
-    gap: 20px;
+    gap: 40px;
     width: 100%;
     transition: all ease 0.2s;
 
     @include MDdesktop {
-      gap: 5px;
+      gap: 20px;
     }
 
     @include desktop {
-      gap: 0px;
+      gap: 10px;
+    }
+
+    @include LGtablet {
+      gap: 20px;
     }
 
     div {
-      @extend .flex-row;
-      gap: 40px;
+      // @extend .flex-row;
+      display: grid;
+
+      grid-template-columns: 15% 85%;
+      gap: 10px;
       height: auto;
-      padding: 0px 150px 0px 50px;
+      padding: 0px 90px 0px 50px;
       justify-content: center;
       align-items: center;
+      transition: all ease 0.2s;
 
       @include MDdesktop {
-        font-size: 1rem;
+        grid-template-columns: 15% 85%;
       }
 
       @include desktop {
         padding-right: 100px;
       }
 
+      @include LGtablet {
+        padding-right: 75px;
+        grid-template-columns: 10% 90%;
+      }
+
       #s__soft-icon {
-        width: 100px;
-        height: 100px;
+        @extend .flex-column;
+        font-size: 60px;
         color: $quaternary-color;
         transition: all ease 0.2s;
 
         @include MDdesktop {
-          width: 90px;
-          height: 90px;
+          font-size: 40px;
         }
 
         @include desktop {
-          width: 80px;
-          height: 80px;
+          font-size: 40px;
+        }
+
+        @include LGtablet {
+          font-size: 40px;
         }
       }
 
@@ -83,6 +108,10 @@
 
         @include desktop {
           font-size: 0.8rem;
+        }
+
+        @include LGtablet {
+          font-size: 1rem;
         }
       }
     }
@@ -106,6 +135,11 @@
         grid-template-columns: repeat(auto-fill, 120px);
       }
 
+      @include LGtablet {
+        grid-template-columns: repeat(auto-fill, 150px);
+        padding: 10px 50px;
+      }
+
       div {
         @extend .flex-row;
         gap: 10px;
@@ -126,6 +160,11 @@
             width: 35px;
             height: 35px;
           }
+
+          @include LGtablet {
+            width: 35px;
+            height: 35px;
+          }
         }
 
         p {
@@ -138,6 +177,10 @@
 
           @include desktop {
             font-size: 0.75rem;
+          }
+
+          @include LGtablet {
+            font-size: 1rem;
           }
           span {
             font-weight: bold;

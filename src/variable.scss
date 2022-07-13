@@ -11,29 +11,36 @@ $logo-size: 80px;
 $LGdesktop: 1920px;
 $MDdesktop: 1600px;
 $desktop: 1366px;
+$LGtablet: 1150px;
 $tablet: 768px;
 $phone: 360px;
 
 @mixin LGdesktop {
-  @media (max-width: #{$LGdesktop}) and (min-width: #{$MDdesktop}) {
+  @media (max-width: #{$LGdesktop}) and (min-width: #{$MDdesktop + 1}) {
     @content;
   }
 }
 
 @mixin MDdesktop {
-  @media (max-width: #{$MDdesktop}) and (min-width: #{$desktop}) {
+  @media (max-width: #{$MDdesktop}) and (min-width: #{$desktop + 1}) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (max-width: #{$desktop}) and (min-width: #{$tablet}) {
+  @media (max-width: #{$desktop}) and (min-width: #{$LGtablet + 1}) {
+    @content;
+  }
+}
+
+@mixin LGtablet {
+  @media (max-width: #{$LGtablet}) and (min-width: #{$tablet + 1}) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (max-width: #{$tablet}) and (min-width: #{$phone}) {
+  @media (max-width: #{$tablet}) and (min-width: #{$phone + 1}) {
     @content;
   }
 }

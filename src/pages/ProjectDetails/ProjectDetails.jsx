@@ -34,7 +34,6 @@ export default function ProjectDetails() {
   };
 
   const data = state?.projectDetailsData?.data;
-  console.log(data);
 
   return (
     <main>

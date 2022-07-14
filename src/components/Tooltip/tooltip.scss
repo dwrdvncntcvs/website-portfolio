@@ -19,12 +19,17 @@
 
     @include MDdesktop {
       margin: 0px 55px;
-      font-size: .85rem;
+      font-size: 0.85rem;
     }
 
     @include desktop {
       margin: 0px 45px;
-      font-size: .75rem;
+      font-size: 0.75rem;
+    }
+
+    @include LGtablet {
+      margin: 0px 55px;
+      font-size: 1rem;
     }
   }
 }

@@ -303,13 +303,13 @@ main {
     }
 
     @include desktop {
-      font-size: 0.75rem;
+      font-size: 1rem;
       height: 30px;
     }
 
     @include LGtablet {
       height: 30px;
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
 
     &:hover {

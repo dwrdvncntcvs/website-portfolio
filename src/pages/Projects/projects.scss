@@ -21,6 +21,10 @@
     @include desktop {
       grid-template-columns: repeat(auto-fill, 200px);
     }
+
+    @include LGtablet {
+      grid-template-columns: repeat(auto-fill, 250px);
+    }
   
     .p__image-container {
       display: flex;
@@ -37,6 +41,10 @@
   
       @include desktop {
         height: 300px;
+      }
+
+      @include LGtablet {
+        height: 400px;
       }
   
       &:hover {

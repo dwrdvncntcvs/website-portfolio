@@ -1,7 +1,7 @@
 @import "../../variable.scss";
 
 #fi__floating-icon {
-  position: fixed;
+  position: absolute;
   align-self: flex-end;
   transform: translateX(-60px) translateY(20px);
   height: 200px;
@@ -13,5 +13,10 @@
 
   @include desktop {
     height: 150px;
+  }
+
+  @include LGtablet {
+    height: 125px;
+    transform: translateX(-20px) translateY(20px);
   }
 }

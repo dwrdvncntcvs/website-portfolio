@@ -16,26 +16,28 @@ export default function Projects() {
   const data = state?.projectData?.data;
 
   return (
-    <PageContainer>
-      <FloatingImage src={Folders} alt="floating-folders" />
-      {data?.description && (
-        <PageHeader title={"portfolio"} description={data?.description} />
-      )}
-      <section className="p__content-container">
-        {data?.projects.map(({ imageUrl, id }, i) => (
-          <Link
-            className="p__image-container"
-            key={i}
-            to={`${id}`}
-            onMouseEnter={() => setShow(true)}
-            onMouseLeave={() => setShow(false)}
-          >
-            <img src={imageUrl} alt="" />
-            {show}
-          </Link>
-        ))}
-      </section>
+    <div className="p__main-container">
+      <PageContainer>
+        <FloatingImage src={Folders} alt="floating-folders" />
+        {data?.description && (
+          <PageHeader title={"portfolio"} description={data?.description} />
+        )}
+        <section className="p__content-container">
+          {data?.projects.map(({ imageUrl, id }, i) => (
+            <Link
+              className="p__image-container"
+              key={i}
+              to={`${id}`}
+              onMouseEnter={() => setShow(true)}
+              onMouseLeave={() => setShow(false)}
+            >
+              <img src={imageUrl} alt="" />
+              {show}
+            </Link>
+          ))}
+        </section>
+      </PageContainer>
       <Outlet />
-    </PageContainer>
+    </div>
   );
 }

@@ -14,6 +14,7 @@ main {
   top: 0;
   justify-content: center;
   align-items: center;
+  transition: all ease 0.2s;
 
   .pd__grid-container {
     display: grid;
@@ -29,14 +30,23 @@ main {
     transition: all ease 0.2s;
 
     @include MDdesktop {
-      width: 75%;
-      height: 75%;
+      width: 80%;
+      height: 80%;
     }
 
     @include desktop {
       width: 100%;
       height: 100%;
       border-radius: 0px;
+    }
+
+    @include LGtablet {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+      overflow-y: auto;
+      grid-template-columns: repeat(auto-fill, 100%);
+      grid-template-rows: 50% repeat(3, auto);
     }
 
     #pd__back-btn {
@@ -54,6 +64,7 @@ main {
       background-color: $primary-color;
       color: $quaternary-color;
       transition: all ease 0.2s;
+      z-index: 1;
 
       @include MDdesktop {
         width: 30px;
@@ -74,12 +85,19 @@ main {
 
     section {
       padding: 10px;
+
+      @include LGtablet {
+        height: 100%;
+      }
     }
 
     .pd__main-image-container {
       display: flex;
       position: relative;
 
+      @include LGtablet {
+        height: 100%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -161,8 +179,7 @@ main {
     .pd__technologies-container {
       display: flex;
       flex-direction: column;
-      overflow-y: auto;
-      overflow-x: hidden;
+      padding: 20px;
 
       h1 {
         font-size: 3rem;
@@ -178,29 +195,26 @@ main {
       }
 
       .pd__technologies-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 150px);
+        display: flex;
         gap: 10px;
         padding: 10px;
-        overflow-y: auto;
-        overflow-x: auto;
-        // @include MDdesktop {
-        //   grid-template-columns: repeat(auto-fill, 140px);
-        // }
-
-        @include desktop {
-          grid-template-columns: repeat(auto-fill, 130px);
-        }
+        position: relative;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        overflow: auto;
 
         #pd__technology {
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          padding: 10px 20px;
+          padding: 5px 20px;
+          position: relative;
+          white-space: pre;
           gap: 10px;
           background-color: $tertiary-color;
           border-radius: 50px;
+          height: 40px;
 
           #pd__icon {
             width: 30px;
@@ -212,6 +226,11 @@ main {
             }
 
             @include desktop {
+              width: 20px;
+              height: 20px;
+            }
+
+            @include LGtablet {
               width: 20px;
               height: 20px;
             }
@@ -284,8 +303,13 @@ main {
     }
 
     @include desktop {
-      font-size: 0.75rem;
+      font-size: 1rem;
       height: 30px;
+    }
+
+    @include LGtablet {
+      height: 30px;
+      font-size: 1rem;
     }
 
     &:hover {

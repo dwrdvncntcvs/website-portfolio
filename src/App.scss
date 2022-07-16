@@ -5,4 +5,23 @@
   @extend .flex-row;
   @extend .page-size;
   background-color: $secondary-color;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $secondary-color;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $tertiary-color;
+    border-radius: 10px;
+    transition: all ease .5s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: $primary-color;
+  }
 }

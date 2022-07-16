@@ -16,6 +16,10 @@
     width: 90px;
   }
 
+  @include LGtablet {
+    width: 90px;
+  }
+
   #nb__head-container {
     flex: 1;
     display: flex;
@@ -36,6 +40,11 @@
       }
 
       @include desktop {
+        width: 60px;
+        height: 60px;
+      }
+
+      @include LGtablet {
         width: 60px;
         height: 60px;
       }
@@ -87,6 +96,13 @@
         height: 40px;
         border-radius: 15px;
       }
+
+      @include LGtablet {
+        width: 50px;
+        font-size: 25px;
+        height: 50px;
+        border-radius: 20px;
+      }
     }
 
     .nb__link-active {
@@ -135,6 +151,11 @@
       gap: 10px;
     }
 
+    @include LGtablet {
+      font-size: 10px;
+      gap: 10px;
+    }
+
     p:nth-child(1) {
       color: $quaternary-color;
     }
@@ -158,6 +179,10 @@
         }
 
         @include desktop {
+          font-size: 14px;
+        }
+
+        @include LGtablet {
           font-size: 14px;
         }
       }

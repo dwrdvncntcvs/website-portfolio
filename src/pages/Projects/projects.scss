@@ -1,45 +1,61 @@
 @import "../../variable.scss";
 @import "../../index.scss";
 
-.p__content-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  width: 100%;
-  gap: 20px;
-  z-index: 1;
+.p__main-container {
+  @extend .flex-column;
+  @extend .page-size;
+  flex: 1;
+  position: relative;
 
-  @include MDdesktop {
-    grid-template-columns: repeat(auto-fill, 250px);
-  }
-
-  @include desktop {
-    grid-template-columns: repeat(auto-fill, 200px);
-  }
-
-  .p__image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    border-radius: 20px;
-    background-color: $tertiary-color;
-    transition: all ease-in-out 0.2s;
-
+  .p__content-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    width: 100%;
+    gap: 20px;
+    z-index: 1;
+  
     @include MDdesktop {
-      height: 400px;
+      grid-template-columns: repeat(auto-fill, 250px);
     }
-
+  
     @include desktop {
-      height: 300px;
+      grid-template-columns: repeat(auto-fill, 200px);
     }
 
-    &:hover {
-      // border: 5px solid $primary-color;
-      outline: 10px solid $primary-color;
+    @include LGtablet {
+      grid-template-columns: repeat(auto-fill, 250px);
     }
+  
+    .p__image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      border-radius: 20px;
+      background-color: $tertiary-color;
+      transition: all ease-in-out 0.2s;
+  
+      @include MDdesktop {
+        height: 400px;
+      }
+  
+      @include desktop {
+        height: 300px;
+      }
 
-    img {
-      width: 100%;
+      @include LGtablet {
+        height: 400px;
+      }
+  
+      &:hover {
+        // border: 5px solid $primary-color;
+        outline: 10px solid $primary-color;
+      }
+  
+      img {
+        width: 100%;
+      }
     }
   }
+  
 }

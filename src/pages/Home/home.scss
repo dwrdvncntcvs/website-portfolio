@@ -27,7 +27,8 @@
     }
 
     @include LGtablet {
-      padding: 0px;
+      padding: 50px 20px;
+      justify-content: flex-end;
     }
 
     h3 {
@@ -140,10 +141,10 @@
 
     @include LGtablet {
       position: absolute;
-      width: 350px;
-      height: 350px;
+      width: auto;
+      max-height: 55%;
       right: 50px;
-      top: 50px;
+      top: 100px;
       align-items: center;
     }
 

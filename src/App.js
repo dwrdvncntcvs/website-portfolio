@@ -1,6 +1,7 @@
 import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import {
+  AboutMe,
   Contact,
   Home,
   PageNotFound,
@@ -21,6 +22,7 @@ function App() {
           <Route path=":id" element={<ProjectDetails />} />
         </Route>
         <Route path="/contact-me" element={<Contact />} />
+        <Route path="/about-me" element={<AboutMe />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

@@ -66,6 +66,23 @@ const url = (link) => {
   return `${API_URL.MAILER}${link}`;
 };
 
+const isLinkActive = (location, link) => {
+  let bool;
+
+  if (link !== "/")
+    bool =
+      location?.pathname === link || location.pathname.includes(link)
+        ? true
+        : false;
+  else
+    bool =
+      location?.pathname === link && location.pathname.includes(link)
+        ? true
+        : false;
+
+  return bool;
+};
+
 export {
   accessLink,
   getAuthError,
@@ -74,4 +91,5 @@ export {
   getIcon,
   navigateLink,
   url,
+  isLinkActive,
 };

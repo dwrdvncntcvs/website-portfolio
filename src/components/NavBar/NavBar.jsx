@@ -6,13 +6,10 @@ import { SiFacebook, SiTwitter, SiLinkedin } from "react-icons/si";
 import { SOC_MED } from "../../utils/variables";
 import { app_logo } from "../../assets/images";
 import Tooltip from "../Tooltip/Tooltip";
+import { isLinkActive } from "../../utils/helper";
 
 export default function NavBar() {
   const location = useLocation();
-
-  const isActive = (link) => {
-    return location?.pathname === link ? true : false;
-  };
 
   const navLinks = [
     { Icon: HiHome, to: "/", title: "Home" },
@@ -39,7 +36,9 @@ export default function NavBar() {
         {navLinks.map(({ Icon, to, title }, i) => (
           <Tooltip key={i} title={title}>
             <Link
-              className={isActive(to) ? "nb__link-active" : "nb__link"}
+              className={
+                isLinkActive(location, to) ? "nb__link-active" : "nb__link"
+              }
               to={to}
             >
               <Icon />

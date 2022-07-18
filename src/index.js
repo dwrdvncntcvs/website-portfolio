@@ -4,6 +4,7 @@ import "./index.scss";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import {
+  AboutMeProvider,
   AuthProvider,
   ContactProvider,
   HomeProvider,
@@ -23,9 +24,11 @@ root.render(
       <SkillsProvider>
         <ProjectsProvider>
           <ContactProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
+            <AboutMeProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </AboutMeProvider>
           </ContactProvider>
         </ProjectsProvider>
       </SkillsProvider>

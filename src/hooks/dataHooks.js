@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import {
+  AboutMeContext,
   AuthContext,
   ContactContext,
   HomeContext,
@@ -27,10 +28,15 @@ const useContactContext = () => {
   return useContext(ContactContext);
 };
 
+const useAboutMeContext = () => {
+  return useContext(AboutMeContext);
+};
+
 export {
   useAuth,
   useHomeContext,
   useSkillsContext,
   useProjectsContext,
   useContactContext,
+  useAboutMeContext,
 };

@@ -27,7 +27,7 @@ export default function ANavBar() {
     <div className="anb__main-container">
       {links.map(({ Icon, to, title }, i) => {
         return (
-          <Tooltip id={"anv__tooltip"} title={title} position="top">
+          <Tooltip key={i} id={"anv__tooltip"} title={title} position="top">
             <Link
               className={"anv__link"}
               id={isLinkActive(location, to) ? "anv__active" : ""}

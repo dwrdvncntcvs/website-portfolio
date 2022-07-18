@@ -22,3 +22,8 @@ export {
   Context as ContactContext,
   Provider as ContactProvider,
 } from "./contactContext";
+
+export {
+  Context as AboutMeContext,
+  Provider as AboutMeProvider,
+} from "./aboutMeContext";

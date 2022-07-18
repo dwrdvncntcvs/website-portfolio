@@ -34,7 +34,7 @@ export default function NavBar() {
       </section>
       <section id="nb__link-container">
         {navLinks.map(({ Icon, to, title }, i) => (
-          <Tooltip key={i} title={title}>
+          <Tooltip key={i} title={title} position="right">
             <Link
               className={
                 isLinkActive(location, to) ? "nb__link-active" : "nb__link"

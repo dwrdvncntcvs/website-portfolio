@@ -6,13 +6,13 @@
   width: 50%;
   height: 50px;
   background-color: $tertiary-color;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
   padding: 5px 20px;
   border-radius: 20px;
 
-  button {
+  .anv__link {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -26,9 +26,14 @@
     color: $quaternary-color;
     font-weight: bold;
     transition: all ease 0.2s;
+    width: 100%;
 
     &:hover {
-      color: $primary-color;
+      color: $secondary-color;
     }
+  }
+  #anv__active {
+    color: $primary-color;
+    pointer-events: none;
   }
 }

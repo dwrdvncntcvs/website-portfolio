@@ -5,6 +5,7 @@ import {
   Contact,
   Home,
   PageNotFound,
+  Personal,
   ProjectDetails,
   Projects,
   Skills,
@@ -22,7 +23,9 @@ function App() {
           <Route path=":id" element={<ProjectDetails />} />
         </Route>
         <Route path="/contact-me" element={<Contact />} />
-        <Route path="/about-me" element={<AboutMe />}></Route>
+        <Route path="/about-me/" element={<AboutMe />}>
+          <Route path="" element={<Personal />} />
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

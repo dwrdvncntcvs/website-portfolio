@@ -2,6 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import { usePersonalContext } from "../../hooks/dataHooks";
 import "./personal.scss";
+import {
+  HiGlobeAlt,
+  HiCalendar,
+  HiLocationMarker,
+  HiAtSymbol,
+  HiDeviceMobile,
+} from "react-icons/hi";
 
 export default function Personal() {
   const { state, getPersonalData } = usePersonalContext();
@@ -13,15 +20,31 @@ export default function Personal() {
   const data = state?.personalData?.data;
 
   return (
-    <div>
-      <p>{data?.name}</p>
-      <p>{data?.birthday}</p>
-      <p>{data?.address}</p>
-      <p>You may contact me through email or message:</p>
-      <ul>
-        <li>{data?.email}</li>
-        <li>+63{data?.contactNumber}</li>
-      </ul>
+    <div className="pl__main-container">
+      <h1>{data?.title}.</h1>
+      <p>
+        Hey there! I'm <span>{data?.name}</span>. {data?.description}
+      </p> 
+      <h2>
+        <HiAtSymbol />
+        {data?.email}
+      </h2>
+      <h2>
+        <HiDeviceMobile />
+        +63{data?.contactNumber}
+      </h2>
+      <h2>
+        <HiLocationMarker />
+        {data?.address}
+      </h2>
+      <h2>
+        <HiCalendar />
+        {data?.birthday}
+      </h2>
+      <h2>
+        <HiGlobeAlt />
+        {data?.nationality}
+      </h2>
     </div>
   );
 }

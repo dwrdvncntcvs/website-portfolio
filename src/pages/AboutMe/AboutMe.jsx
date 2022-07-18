@@ -20,12 +20,12 @@ export default function AboutMe() {
       <div className="am__main-container">
         <section className="am__left-container">
           <img src={data?.imageUrl} alt="" />
+          <ANavBar />
         </section>
         <section className="am__right-container">
           <div className="am__outlet-container">
             <Outlet />
           </div>
-          <ANavBar />
         </section>
       </div>
     </PageContainer>

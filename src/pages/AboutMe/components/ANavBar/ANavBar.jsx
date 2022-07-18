@@ -1,6 +1,6 @@
 import React from "react";
 import "./aNavBar.scss";
-import { HiAcademicCap, HiStar, HiBriefcase, HiUser } from "react-icons/hi";
+import { HiAcademicCap, HiDocumentText, HiBriefcase, HiUser } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { isLinkActive } from "../../../../utils/helper";
 import Tooltip from "../../../../components/Tooltip/Tooltip";
@@ -9,18 +9,18 @@ export default function ANavBar() {
   const location = useLocation();
 
   const links = [
-    { Icon: HiUser, to: "/about-me", title: "Personal Info" },
+    { Icon: HiUser, to: "/about-me", title: "Personal" },
     {
-      Icon: HiStar,
+      Icon: HiDocumentText,
       to: "/about-me/certifications",
-      title: "Certifications Info",
+      title: "Certifications",
     },
     {
       Icon: HiBriefcase,
       to: "/about-me/experiences",
-      title: "Experiences Info",
+      title: "Experiences",
     },
-    { Icon: HiAcademicCap, to: "/about-me/academic", title: "Academic Info" },
+    { Icon: HiAcademicCap, to: "/about-me/academic", title: "Academic" },
   ];
 
   return (

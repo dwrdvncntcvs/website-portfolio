@@ -19,6 +19,14 @@ export default function Personal() {
 
   const data = state?.personalData?.data;
 
+  const h2Values = [
+    { value: data?.email, Icon: HiAtSymbol },
+    { value: data?.address, Icon: HiLocationMarker },
+    { value: data?.contactNumber, Icon: HiDeviceMobile },
+    { value: data?.birthday, Icon: HiCalendar },
+    { value: data?.nationality, Icon: HiGlobeAlt },
+  ];
+
   return (
     <div className="pl__main-container">
       <h1>{data?.title}.</h1>
@@ -32,26 +40,12 @@ export default function Personal() {
           {value}
         </p>
       ))}
-      <h2>
-        <HiAtSymbol />
-        {data?.email}
-      </h2>
-      <h2>
-        <HiDeviceMobile />
-        +63{data?.contactNumber}
-      </h2>
-      <h2>
-        <HiLocationMarker />
-        {data?.address}
-      </h2>
-      <h2>
-        <HiCalendar />
-        {data?.birthday}
-      </h2>
-      <h2>
-        <HiGlobeAlt />
-        {data?.nationality}
-      </h2>
+      {h2Values.map(({ Icon, value }, i) => (
+        <h2 key={i}>
+          <Icon />
+          {value}
+        </h2>
+      ))}
     </div>
   );
 }

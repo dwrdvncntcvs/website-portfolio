@@ -22,9 +22,16 @@ export default function Personal() {
   return (
     <div className="pl__main-container">
       <h1>{data?.title}.</h1>
-      <p>
-        Hey there! I'm <span>{data?.name}</span>. {data?.description}
-      </p> 
+      {data?.description.map((value, i) => (
+        <p>
+          {i < 1 && (
+            <>
+              Hey there! I'm <span>{data?.name}</span>.
+            </>
+          )}{" "}
+          {value}
+        </p>
+      ))}
       <h2>
         <HiAtSymbol />
         {data?.email}

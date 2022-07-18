@@ -4,6 +4,7 @@ import {
   AuthContext,
   ContactContext,
   HomeContext,
+  PersonalContext,
   ProjectsContext,
   SkillsContext,
 } from "../context";
@@ -32,6 +33,10 @@ const useAboutMeContext = () => {
   return useContext(AboutMeContext);
 };
 
+const usePersonalContext = () => {
+  return useContext(PersonalContext);
+};
+
 export {
   useAuth,
   useHomeContext,
@@ -39,4 +44,5 @@ export {
   useProjectsContext,
   useContactContext,
   useAboutMeContext,
+  usePersonalContext,
 };

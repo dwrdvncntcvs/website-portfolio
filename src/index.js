@@ -8,6 +8,7 @@ import {
   AuthProvider,
   ContactProvider,
   HomeProvider,
+  PersonalProvider,
   ProjectsProvider,
   SkillsProvider,
 } from "./context";
@@ -25,9 +26,11 @@ root.render(
         <ProjectsProvider>
           <ContactProvider>
             <AboutMeProvider>
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
+              <PersonalProvider>
+                <BrowserRouter>
+                  <App />
+                </BrowserRouter>
+              </PersonalProvider>
             </AboutMeProvider>
           </ContactProvider>
         </ProjectsProvider>

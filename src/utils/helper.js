@@ -83,6 +83,10 @@ const isLinkActive = (location, link) => {
   return bool;
 };
 
+const getResponseObj = (data) => {
+  return data.docs.map((doc) => ({ data: doc.data(), id: doc.id }));
+};
+
 export {
   accessLink,
   getAuthError,
@@ -92,4 +96,5 @@ export {
   navigateLink,
   url,
   isLinkActive,
+  getResponseObj,
 };

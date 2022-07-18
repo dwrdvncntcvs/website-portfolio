@@ -69,6 +69,10 @@ const ABOUT_ME_CONTEXT_VAR = {
   GET_ABOUT_ME_DATA: "getAboutMeData",
 };
 
+const PERSONAL_CONTEXT_VAR = {
+  GET_PERSONAL_DATA: "getPersonalData",
+};
+
 const SOFT_ICON_VAR = [
   {
     value: HiChatAlt2,
@@ -205,4 +209,5 @@ export {
   CONTACT_CONTEXT_VAR,
   API_URL,
   ABOUT_ME_CONTEXT_VAR,
+  PERSONAL_CONTEXT_VAR,
 };

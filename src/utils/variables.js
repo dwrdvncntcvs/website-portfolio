@@ -61,8 +61,7 @@ const PROJECTS_CONTEXT_VAR = {
 
 const CONTACT_CONTEXT_VAR = {
   GET_CONTACT_DATA: "getContactData",
-  GET_CONTACT_EMAIL_RES: "getContactEmailRes",
-  GET_CONTACT_EMAIL_ERR: "getContactEmailErr",
+  GET_CONTACT_RESPONSE_MSG: "getContactResponseMsg",
 };
 
 const ABOUT_ME_CONTEXT_VAR = {
@@ -195,6 +194,11 @@ const SKILL_TYPE_VAR = {
   TECHNICAL: "technical",
 };
 
+const RES_STATUS = {
+  SUCCESS: "success",
+  ERROR: "error",
+};
+
 export {
   AUTH_VARIABLE,
   SOC_MED,
@@ -210,4 +214,5 @@ export {
   API_URL,
   ABOUT_ME_CONTEXT_VAR,
   PERSONAL_CONTEXT_VAR,
+  RES_STATUS,
 };

@@ -6,3 +6,4 @@ export { default as Tooltip } from "./Tooltip/Tooltip";
 export { default as FloatingImage } from "./FloatingImage/FloatingImage";
 export { default as Map } from "./Map/Map";
 export { default as ContactForm } from "./ContactForm/ContactForm";
+export { default as ResponseMsg } from "./ResponseMsg/ResponseMsg";

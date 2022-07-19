@@ -1,0 +1,20 @@
+@import "../../index.scss";
+@import "../../variable.scss";
+
+.sm__main-container {
+  @extend .flex-row;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 75px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: $primary-color;
+  border-radius: 20px;
+  border: 10px solid $secondary-color;
+  font-weight: bold;
+  font-size: 1rem;
+  color: $secondary-color;
+}

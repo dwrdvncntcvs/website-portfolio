@@ -10,7 +10,7 @@
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 5px;
+  padding: 0px 10px;
 
   h1 {
     font-size: 3rem;
@@ -41,6 +41,7 @@
     font-size: 1.25rem;
     text-indent: 50px;
     padding: 10px 0px 20px 0px;
+    text-align: justify;
 
     span {
       text-transform: uppercase;

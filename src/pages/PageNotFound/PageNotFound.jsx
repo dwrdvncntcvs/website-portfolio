@@ -2,6 +2,7 @@ import React from "react";
 import "./pageNotFound.scss";
 import { PNF } from "../../assets/svgs";
 import { Link } from "react-router-dom";
+import { HiHome } from "react-icons/hi";
 
 export default function PageNotFound() {
   return (
@@ -11,7 +12,7 @@ export default function PageNotFound() {
         <p>Oops! What are you doing here?</p>
         <p>There's nothing to see in here! Click </p>
         <Link className="pnf__link" to="/">
-          Home
+          <HiHome />
         </Link>
       </div>
     </div>

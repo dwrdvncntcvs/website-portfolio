@@ -7,7 +7,6 @@
 
   p {
     position: absolute;
-    margin: 0px 65px;
     background-color: $quaternary-color;
     padding: 5px 15px;
     color: $secondary-color;
@@ -18,18 +17,39 @@
     white-space: nowrap;
 
     @include MDdesktop {
-      margin: 0px 55px;
       font-size: 0.85rem;
     }
 
     @include desktop {
-      margin: 0px 45px;
       font-size: 0.75rem;
     }
 
     @include LGtablet {
-      margin: 0px 55px;
       font-size: 1rem;
     }
+  }
+
+  .t__right {
+    margin: 0px 65px;
+
+    @include MDdesktop {
+      margin: 0px 55px;
+    }
+
+    @include desktop {
+      margin: 0px 45px;
+    }
+
+    @include LGtablet {
+      margin: 0px 55px;
+    }
+  }
+
+  .t__right {
+    transform: translateX(5px);
+  }
+
+  .t__top {
+    transform: translateY(-45px) translateX(-40%);
   }
 }

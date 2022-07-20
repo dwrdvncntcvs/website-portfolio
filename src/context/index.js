@@ -22,3 +22,18 @@ export {
   Context as ContactContext,
   Provider as ContactProvider,
 } from "./contactContext";
+
+export {
+  Context as AboutMeContext,
+  Provider as AboutMeProvider,
+} from "./aboutMeContext";
+
+export {
+  Context as PersonalContext,
+  Provider as PersonalProvider,
+} from "./personalContext";
+
+export {
+  Context as CertificateContext,
+  Provider as CertificateProvider,
+} from "./certificateContext";

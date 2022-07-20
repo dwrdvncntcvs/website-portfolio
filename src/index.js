@@ -4,9 +4,12 @@ import "./index.scss";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import {
+  AboutMeProvider,
   AuthProvider,
+  CertificateProvider,
   ContactProvider,
   HomeProvider,
+  PersonalProvider,
   ProjectsProvider,
   SkillsProvider,
 } from "./context";
@@ -23,9 +26,15 @@ root.render(
       <SkillsProvider>
         <ProjectsProvider>
           <ContactProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
+            <AboutMeProvider>
+              <PersonalProvider>
+                <CertificateProvider>
+                  <BrowserRouter>
+                    <App />
+                  </BrowserRouter>
+                </CertificateProvider>
+              </PersonalProvider>
+            </AboutMeProvider>
           </ContactProvider>
         </ProjectsProvider>
       </SkillsProvider>

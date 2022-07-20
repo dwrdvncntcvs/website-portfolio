@@ -66,6 +66,33 @@ const url = (link) => {
   return `${API_URL.MAILER}${link}`;
 };
 
+const isLinkActive = (location, link, homePath = "") => {
+  let bool;
+
+  if (link !== homePath)
+    bool =
+      location?.pathname === link || location.pathname.includes(link)
+        ? true
+        : false;
+  else
+    bool =
+      location?.pathname === link && location.pathname.includes(link)
+        ? true
+        : false;
+
+  return bool;
+};
+
+const getResponseObj = (data) => {
+  return data.docs.map((doc) => ({ data: doc.data(), id: doc.id }));
+};
+
+const arrangeImages = (images = [], mainImage) => {
+  const imagesArr = images.filter((image) => image !== mainImage);
+  imagesArr.unshift(mainImage);
+  return imagesArr;
+};
+
 export {
   accessLink,
   getAuthError,
@@ -74,4 +101,7 @@ export {
   getIcon,
   navigateLink,
   url,
+  isLinkActive,
+  getResponseObj,
+  arrangeImages,
 };

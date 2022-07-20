@@ -13,7 +13,7 @@ export default function ANavBar() {
     {
       Icon: HiDocumentText,
       to: "/about-me/certifications",
-      title: "Certifications",
+      title: "Certificates",
     },
     {
       Icon: HiBriefcase,

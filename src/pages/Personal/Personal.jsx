@@ -32,7 +32,7 @@ export default function Personal() {
     <div className="pl__main-container">
       <OutletHeader title={data?.title} />
       {data?.description.map((value, i) => (
-        <p>
+        <p key={i}>
           {i < 1 && (
             <>
               Hey there! I'm <span>{data?.name}</span>.

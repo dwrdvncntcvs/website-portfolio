@@ -12,12 +12,12 @@
     @extend .flex-column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 60px;
 
     img {
       padding: 10px;
-      width: 400px;
-      height: 400px;
+      width: 500px;
+      height: 500px;
       background-color: $tertiary-color;
       justify-content: center;
       align-items: center;

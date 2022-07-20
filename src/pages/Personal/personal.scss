@@ -12,17 +12,11 @@
   overflow-x: hidden;
   padding: 0px 10px;
 
-  h1 {
-    font-size: 3rem;
-    color: $primary-color;
-    text-transform: lowercase;
-  }
-
   h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
     color: $tertiary-color;
@@ -38,7 +32,7 @@
 
   p {
     color: $quaternary-color;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     text-indent: 50px;
     padding: 10px 0px 20px 0px;
     text-align: justify;

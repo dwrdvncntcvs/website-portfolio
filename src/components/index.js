@@ -7,3 +7,4 @@ export { default as FloatingImage } from "./FloatingImage/FloatingImage";
 export { default as Map } from "./Map/Map";
 export { default as ContactForm } from "./ContactForm/ContactForm";
 export { default as ResponseMsg } from "./ResponseMsg/ResponseMsg";
+export { default as OutletHeader } from "./OutletHeader/OutletHeader";

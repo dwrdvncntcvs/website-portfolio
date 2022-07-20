@@ -9,6 +9,7 @@ import {
   HiAtSymbol,
   HiDeviceMobile,
 } from "react-icons/hi";
+import { OutletHeader } from "../../components";
 
 export default function Personal() {
   const { state, getPersonalData } = usePersonalContext();
@@ -29,7 +30,7 @@ export default function Personal() {
 
   return (
     <div className="pl__main-container">
-      <h1>{data?.title}.</h1>
+      <OutletHeader title={data?.title} />
       {data?.description.map((value, i) => (
         <p>
           {i < 1 && (

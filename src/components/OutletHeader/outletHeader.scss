@@ -1,12 +1,12 @@
 @import "../../index.scss";
 @import "../../variable.scss";
 
-.ct__main-container {
+.oh__main-container {
   @extend .flex-column;
-  height: 100%;
+  width: 100%;
 
   h1 {
-    color: $primary-color;
     font-size: 3rem;
+    color: $primary-color;
   }
 }

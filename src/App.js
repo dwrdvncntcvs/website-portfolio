@@ -2,6 +2,7 @@ import "./App.scss";
 import { Routes, Route } from "react-router-dom";
 import {
   AboutMe,
+  Certificates,
   Contact,
   Home,
   PageNotFound,
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact-me" element={<Contact />} />
         <Route path="/about-me/" element={<AboutMe />}>
           <Route path="" element={<Personal />} />
+          <Route path="certificates" element={<Certificates />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

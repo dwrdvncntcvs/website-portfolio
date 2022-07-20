@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { HiX, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { arrangeImages } from "../../utils/helper";
 import "./previewImages.scss";
@@ -6,6 +7,12 @@ import "./previewImages.scss";
 export default function PreviewImages({ images, mainImage, previewState }) {
   const [preview, setPreview] = previewState;
   const [imgId, setImgId] = useState(0);
+
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setPreview(false);
+    });
+  }, []);
 
   const newImages = arrangeImages(images, mainImage);
 

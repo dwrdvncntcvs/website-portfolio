@@ -2,6 +2,7 @@ import { useContext } from "react";
 import {
   AboutMeContext,
   AuthContext,
+  CertificateContext,
   ContactContext,
   HomeContext,
   PersonalContext,
@@ -37,6 +38,10 @@ const usePersonalContext = () => {
   return useContext(PersonalContext);
 };
 
+const useCertificateContext = () => {
+  return useContext(CertificateContext);
+};
+
 export {
   useAuth,
   useHomeContext,
@@ -45,4 +50,5 @@ export {
   useContactContext,
   useAboutMeContext,
   usePersonalContext,
+  useCertificateContext,
 };

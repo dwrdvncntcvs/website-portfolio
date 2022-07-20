@@ -32,3 +32,8 @@ export {
   Context as PersonalContext,
   Provider as PersonalProvider,
 } from "./personalContext";
+
+export {
+  Context as CertificateContext,
+  Provider as CertificateProvider,
+} from "./certificateContext";

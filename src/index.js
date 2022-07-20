@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import {
   AboutMeProvider,
   AuthProvider,
+  CertificateProvider,
   ContactProvider,
   HomeProvider,
   PersonalProvider,
@@ -27,9 +28,11 @@ root.render(
           <ContactProvider>
             <AboutMeProvider>
               <PersonalProvider>
-                <BrowserRouter>
-                  <App />
-                </BrowserRouter>
+                <CertificateProvider>
+                  <BrowserRouter>
+                    <App />
+                  </BrowserRouter>
+                </CertificateProvider>
               </PersonalProvider>
             </AboutMeProvider>
           </ContactProvider>

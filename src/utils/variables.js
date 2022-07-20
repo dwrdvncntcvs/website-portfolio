@@ -72,6 +72,10 @@ const PERSONAL_CONTEXT_VAR = {
   GET_PERSONAL_DATA: "getPersonalData",
 };
 
+const CERT_CONTEXT_VAR = {
+  GET_CERT_DATA: "getCertData",
+};
+
 const SOFT_ICON_VAR = [
   {
     value: HiChatAlt2,
@@ -215,4 +219,5 @@ export {
   ABOUT_ME_CONTEXT_VAR,
   PERSONAL_CONTEXT_VAR,
   RES_STATUS,
+  CERT_CONTEXT_VAR,
 };

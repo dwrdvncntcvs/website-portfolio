@@ -12,6 +12,14 @@
   padding: 5px 20px;
   border-radius: 50px;
 
+  @include MDdesktop {
+    height: 50px;
+  }
+
+  @include desktop {
+    height: 40px;
+  }
+
   .anv__link {
     display: flex;
     flex: 1;
@@ -28,6 +36,14 @@
     transition: all ease 0.2s;
     width: 100%;
 
+    @include MDdesktop {
+      font-size: 1.5rem;
+    }
+
+    @include desktop {
+      font-size: 1.25rem;
+    }
+
     &:hover {
       color: $secondary-color;
     }
@@ -36,5 +52,13 @@
     color: $primary-color;
     pointer-events: none;
     font-size: 2.5rem;
+
+    @include MDdesktop {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 1.5rem;
+    }
   }
 }

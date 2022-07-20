@@ -9,5 +9,13 @@
     font-size: 4rem !important;
     color: $primary-color;
     text-transform: lowercase;
+
+    @include MDdesktop {
+      font-size: 3rem !important;
+    }
+
+    @include desktop {
+      font-size: 2.5rem !important;
+    }
   }
 }

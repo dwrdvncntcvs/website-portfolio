@@ -12,7 +12,7 @@ export default function ANavBar() {
     { Icon: HiUser, to: "/about-me", title: "Personal" },
     {
       Icon: HiDocumentText,
-      to: "/about-me/certifications",
+      to: "/about-me/certificates",
       title: "Certificates",
     },
     {

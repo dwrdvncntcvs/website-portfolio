@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { OutletHeader } from "../../components";
+import { OutletHeader, PreviewImages } from "../../components";
 import { useCertificateContext } from "../../hooks/dataHooks";
 import "./certificates.scss";
 
@@ -8,12 +8,23 @@ export default function Certificates() {
   const { state, getCertData } = useCertificateContext();
   const [show, setShow] = useState(false);
   const [id, setId] = useState(null);
+  const [preview, setPreview] = useState(false);
+  const [image, setImage] = useState("");
 
   useEffect(() => {
     getCertData();
   }, []);
 
   const data = state?.certificateData?.data;
+
+  const images = () => {
+    let arr = [];
+    if (data?.certificates)
+      for (let image of data?.certificates) {
+        arr.push(image.imageUrl);
+      }
+    return arr;
+  };
 
   return (
     <div className="ct__main-container">
@@ -28,12 +39,23 @@ export default function Certificates() {
               setId(i);
             }}
             onMouseLeave={() => setShow(false)}
+            onClick={() => {
+              setPreview(true);
+              setImage(imageUrl);
+            }}
           >
             {show && id === i && <span>{title}</span>}
             <img src={imageUrl} alt={title} />
           </div>
         ))}
       </section>
+      {preview && (
+        <PreviewImages
+          images={images()}
+          previewState={[preview, setPreview]}
+          mainImage={image}
+        />
+      )}
     </div>
   );
 }

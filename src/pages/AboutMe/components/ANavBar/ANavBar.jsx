@@ -30,7 +30,7 @@ export default function ANavBar() {
           <Tooltip key={i} id={"anv__tooltip"} title={title} position="top">
             <Link
               className={"anv__link"}
-              id={isLinkActive(location, to) ? "anv__active" : ""}
+              id={isLinkActive(location, to, "/about-me") ? "anv__active" : ""}
               to={to}
             >
               <Icon />

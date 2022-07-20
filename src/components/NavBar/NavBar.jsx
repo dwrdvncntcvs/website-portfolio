@@ -37,7 +37,7 @@ export default function NavBar() {
           <Tooltip key={i} title={title} position="right">
             <Link
               className={
-                isLinkActive(location, to) ? "nb__link-active" : "nb__link"
+                isLinkActive(location, to, "/") ? "nb__link-active" : "nb__link"
               }
               to={to}
             >

@@ -66,10 +66,10 @@ const url = (link) => {
   return `${API_URL.MAILER}${link}`;
 };
 
-const isLinkActive = (location, link) => {
+const isLinkActive = (location, link, homePath = "") => {
   let bool;
 
-  if (link !== "/")
+  if (link !== homePath)
     bool =
       location?.pathname === link || location.pathname.includes(link)
         ? true

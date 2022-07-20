@@ -4,6 +4,7 @@ import {
   AboutMe,
   Certificates,
   Contact,
+  Experiences,
   Home,
   PageNotFound,
   Personal,
@@ -27,6 +28,7 @@ function App() {
         <Route path="/about-me/" element={<AboutMe />}>
           <Route path="" element={<Personal />} />
           <Route path="certificates" element={<Certificates />} />
+          <Route path="experiences" element={<Experiences />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

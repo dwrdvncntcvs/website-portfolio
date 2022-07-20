@@ -8,12 +8,6 @@ export default function PreviewImages({ images, mainImage, previewState }) {
   const [preview, setPreview] = previewState;
   const [imgId, setImgId] = useState(0);
 
-  useEffect(() => {
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") setPreview(false);
-    });
-  }, []);
-
   const newImages = arrangeImages(images, mainImage);
 
   const closeAction = () => {
@@ -33,6 +27,18 @@ export default function PreviewImages({ images, mainImage, previewState }) {
       return setImgId(imgId - 1);
     }
   };
+
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setPreview(false);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") return viewImage("right");
+
+      if (e.key === "ArrowLeft") return viewImage("left");
+    });
+  }, [imgId]);
 
   return (
     <div className="pi__main-container">

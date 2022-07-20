@@ -1,23 +1,13 @@
 import React, { useState } from "react";
 import { HiX, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { arrangeImages } from "../../utils/helper";
 import "./previewImages.scss";
 
-export default function PreviewImages({
-  images,
-  mainImage,
-  previewState,
-  imageId,
-}) {
+export default function PreviewImages({ images, mainImage, previewState }) {
   const [preview, setPreview] = previewState;
   const [imgId, setImgId] = useState(0);
 
-  const rearrangeImage = () => {
-    const imagesArr = images.filter((image) => image !== mainImage);
-    imagesArr.unshift(mainImage);
-    return imagesArr;
-  };
-
-  const newImages = rearrangeImage();
+  const newImages = arrangeImages(images, mainImage);
 
   const closeAction = () => {
     setPreview(!preview);

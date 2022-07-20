@@ -87,6 +87,12 @@ const getResponseObj = (data) => {
   return data.docs.map((doc) => ({ data: doc.data(), id: doc.id }));
 };
 
+const arrangeImages = (images = [], mainImage) => {
+  const imagesArr = images.filter((image) => image !== mainImage);
+  imagesArr.unshift(mainImage);
+  return imagesArr;
+};
+
 export {
   accessLink,
   getAuthError,
@@ -97,4 +103,5 @@ export {
   url,
   isLinkActive,
   getResponseObj,
+  arrangeImages,
 };

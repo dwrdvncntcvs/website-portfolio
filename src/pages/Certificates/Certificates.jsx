@@ -18,12 +18,7 @@ export default function Certificates() {
   const data = state?.certificateData?.data;
 
   const images = () => {
-    let arr = [];
-    if (data?.certificates)
-      for (let image of data?.certificates) {
-        arr.push(image.imageUrl);
-      }
-    return arr;
+    return data?.certificates.map(({ imageUrl }) => imageUrl);
   };
 
   return (

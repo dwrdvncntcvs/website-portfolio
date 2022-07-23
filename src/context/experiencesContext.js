@@ -19,7 +19,7 @@ const getExpData = (dispatch) => async () => {
   const data = response.docs.map((doc) => ({
     data: doc.data(),
     id: doc.id,
-  }))[0];
+  }));
   dispatch({ type: EXP_CONTEXT_VAR.GET_EXP_DATA, payload: data });
 };
 

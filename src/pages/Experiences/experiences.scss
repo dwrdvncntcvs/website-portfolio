@@ -12,50 +12,147 @@
   gap: 25px;
 
   .exp__content-container {
-    @extend .flex-column;
+    @extend .flex-row;
     width: 100%;
     height: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 10;
+    position: relative;
+
+    button {
+      width: 50px;
+      height: 100px;
+      border-radius: 20px;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: $quaternary-color;
+      transition: all ease 0.2s;
+      align-self: center;
+      font-size: 30px;
+      z-index: 2;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
 
     .exp__card-container {
-      @extend .flex-column;
-      width: 80%;
+      @extend .flex-row;
+      width: 100%;
       height: 100%;
-      background-color: $tertiary-color;
       border-radius: 20px;
-      padding: 20px;
       gap: 20px;
+      overflow: hidden;
+      position: absolute;
 
       .exp__company-container {
         @extend .flex-column;
         position: relative;
         width: 100%;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
         img {
-          position: absolute;
-          right: 0;
-          width: auto;
-          height: 100%;
           border-radius: 20px;
-        }
-
-        h1 {
-          font-size: 3.5rem;
-          color: $primary-color;
-          transform: translateY(15px);
-        }
-
-        h2 {
-          font-size: 2.5rem;
-          color: $quaternary-color;
-        }
-
-        h3 {
-          text-transform: uppercase;
-          color: $secondary-color;
-          letter-spacing: 5px;
+          width: 80%;
+          height: 80%;
         }
       }
+
+      .exp__work-container {
+        @extend .flex-column;
+        width: 100%;
+        gap: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .exp__company-details {
+          @extend .flex-column;
+
+          h1 {
+            font-size: 3.5rem;
+            color: $primary-color;
+            transform: translateY(15px);
+          }
+
+          h2 {
+            font-size: 2.5rem;
+            color: $quaternary-color;
+          }
+
+          h3 {
+            text-transform: uppercase;
+            color: $quaternary-color;
+            letter-spacing: 2px;
+          }
+        }
+
+        .exp__work-content-container {
+          @extend .flex-column;
+          gap: 10px;
+
+          h1 {
+            font-size: 1.5rem;
+            color: $primary-color;
+          }
+
+          ul {
+            @extend .flex-column;
+            gap: 10px;
+            padding: 0px 30px;
+            font-size: 1rem;
+            color: $quaternary-color;
+            position: relative;
+            list-style: none;
+
+            li {
+              @extend .flex-row;
+              align-items: center;
+              position: relative;
+
+              p {
+                transform: translateY(30%) translateX(5px);
+              }
+
+              #exp__line {
+                @extend .flex-column;
+                position: absolute;
+                left: -15px;
+                width: 10px;
+                height: 90%;
+                border: 1px solid $primary-color;
+                border-top: none;
+                border-right: none;
+                border-radius: 0px 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .exp__footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+
+    div {
+      width: 10px;
+      height: 10px;
+      background-color: $tertiary-color;
+      border-radius: 100%;
+      transition: all ease 0.3s;
+    }
+
+    #exp__active {
+      width: 15px;
+      height: 15px;
+      background-color: $primary-color;
     }
   }
 }

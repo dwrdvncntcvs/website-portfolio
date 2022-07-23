@@ -76,6 +76,10 @@ const CERT_CONTEXT_VAR = {
   GET_CERT_DATA: "getCertData",
 };
 
+const EXP_CONTEXT_VAR = {
+  GET_EXP_DATA: "getExpData",
+};
+
 const SOFT_ICON_VAR = [
   {
     value: HiChatAlt2,
@@ -220,4 +224,5 @@ export {
   PERSONAL_CONTEXT_VAR,
   RES_STATUS,
   CERT_CONTEXT_VAR,
+  EXP_CONTEXT_VAR,
 };

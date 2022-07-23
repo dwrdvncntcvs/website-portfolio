@@ -1,23 +1,42 @@
 import React from "react";
+import { useEffect } from "react";
 import { OutletHeader } from "../../components";
+import { useExperiencesContext } from "../../hooks/dataHooks";
 import "./experiences.scss";
 
 export default function Experiences() {
+  const { state, getExpData } = useExperiencesContext();
+
+  useEffect(() => {
+    getExpData();
+  }, []);
+
+  const data = state?.expData?.data;
+
   return (
     <div className="exp__main-container">
       <OutletHeader title={"experiences"} />
       <section className="exp__content-container">
         <div className="exp__card-container">
           <section className="exp__company-container">
-            <p>Company logo img</p>
-            <h1>Role</h1>
-            <h2>Company Name</h2>
-            <h3>Job Duration</h3>
+            <img src={data?.companyLogo} alt="" />
+            <h1>{data?.role}</h1>
+            <h2>{data?.companyName}</h2>
+            <h3>
+              {data?.dateStarted} - {data?.dateEnded}
+            </h3>
           </section>
           <section>
-            <h1>Work</h1>
-            <h2>title</h2>
-            <p>Description</p>
+            {data?.works.map(({ title, descriptions }, i) => (
+              <div key={i}>
+                <h1>{title}</h1>
+                <ul>
+                  {descriptions.map((value, i) => (
+                    <li key={i}>{value}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </section>
         </div>
       </section>

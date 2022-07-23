@@ -42,6 +42,18 @@
         h1 {
           font-size: 3.5rem;
           color: $primary-color;
+          transform: translateY(15px);
+        }
+
+        h2 {
+          font-size: 2.5rem;
+          color: $quaternary-color;
+        }
+
+        h3 {
+          text-transform: uppercase;
+          color: $secondary-color;
+          letter-spacing: 5px;
         }
       }
     }

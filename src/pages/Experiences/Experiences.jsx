@@ -19,12 +19,14 @@ export default function Experiences() {
       <section className="exp__content-container">
         <div className="exp__card-container">
           <section className="exp__company-container">
-            <img src={data?.companyLogo} alt="" />
-            <h1>{data?.role}</h1>
-            <h2>{data?.companyName}</h2>
+            <img src={data?.companyLogo} alt="" />{" "}
             <h3>
               {data?.dateStarted} - {data?.dateEnded}
             </h3>
+            <div>
+              <h1>{data?.role}</h1>
+              <h2>{data?.companyName}</h2>
+            </div>
           </section>
           <section>
             {data?.works.map(({ title, descriptions }, i) => (

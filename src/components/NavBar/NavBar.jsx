@@ -14,7 +14,7 @@ export default function NavBar() {
   const navLinks = [
     { Icon: HiHome, to: "/", title: "Home" },
     { Icon: HiCode, to: "/skills", title: "Skills" },
-    { Icon: HiUser, to: "/about-me", title: "About Me" },
+    // { Icon: HiUser, to: "/about-me", title: "About Me" },
     { Icon: HiFolder, to: "/projects", title: "Portfolio" },
     { Icon: HiPhone, to: "/contact-me", title: "Contact Me" },
   ];

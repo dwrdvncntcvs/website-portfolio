@@ -20,6 +20,18 @@
     height: 40px;
   }
 
+  @include LGtablet {
+    position: fixed;
+    flex-direction: column;
+    height: 400px;
+    right: 0px;
+    width: 50px;
+    z-index: 10;
+    border: 5px solid $secondary-color;
+    border-right: none;
+    border-radius: 20px 0px 0px 20px;
+  }
+
   .anv__link {
     display: flex;
     flex: 1;
@@ -44,6 +56,10 @@
       font-size: 1.25rem;
     }
 
+    @include LGtablet {
+      font-size: 1.25rem;
+    }
+
     &:hover {
       color: $secondary-color;
     }
@@ -58,6 +74,10 @@
     }
 
     @include desktop {
+      font-size: 1.5rem;
+    }
+
+    @include LGtablet {
       font-size: 1.5rem;
     }
   }

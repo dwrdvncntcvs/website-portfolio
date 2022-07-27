@@ -1,11 +1,16 @@
 import React from "react";
 import "./aNavBar.scss";
-import { HiAcademicCap, HiDocumentText, HiBriefcase, HiUser } from "react-icons/hi";
+import {
+  HiAcademicCap,
+  HiDocumentText,
+  HiBriefcase,
+  HiUser,
+} from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { isLinkActive } from "../../../../utils/helper";
 import Tooltip from "../../../../components/Tooltip/Tooltip";
 
-export default function ANavBar() {
+export default function ANavBar({ position }) {
   const location = useLocation();
 
   const links = [
@@ -27,7 +32,12 @@ export default function ANavBar() {
     <div className="anb__main-container">
       {links.map(({ Icon, to, title }, i) => {
         return (
-          <Tooltip key={i} id={"anv__tooltip"} title={title} position="top">
+          <Tooltip
+            key={i}
+            id={"anv__tooltip"}
+            title={title}
+            position={position}
+          >
             <Link
               className={"anv__link"}
               id={isLinkActive(location, to, "/about-me") ? "anv__active" : ""}

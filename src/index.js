@@ -8,6 +8,7 @@ import {
   AuthProvider,
   CertificateProvider,
   ContactProvider,
+  ExperiencesProvider,
   HomeProvider,
   PersonalProvider,
   ProjectsProvider,
@@ -29,9 +30,11 @@ root.render(
             <AboutMeProvider>
               <PersonalProvider>
                 <CertificateProvider>
-                  <BrowserRouter>
-                    <App />
-                  </BrowserRouter>
+                  <ExperiencesProvider>
+                    <BrowserRouter>
+                      <App />
+                    </BrowserRouter>
+                  </ExperiencesProvider>
                 </CertificateProvider>
               </PersonalProvider>
             </AboutMeProvider>

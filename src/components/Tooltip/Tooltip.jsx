@@ -10,6 +10,8 @@ export default function Tooltip({ children, title, position }) {
     if (position === "right") pos = "t__right";
 
     if (position === "top") pos = "t__top";
+
+    if (position === "") pos = "t__none";
     return pos;
   };
 

@@ -4,6 +4,7 @@ import {
   AuthContext,
   CertificateContext,
   ContactContext,
+  ExperiencesContext,
   HomeContext,
   PersonalContext,
   ProjectsContext,
@@ -42,6 +43,10 @@ const useCertificateContext = () => {
   return useContext(CertificateContext);
 };
 
+const useExperiencesContext = () => {
+  return useContext(ExperiencesContext);
+};
+
 export {
   useAuth,
   useHomeContext,
@@ -51,4 +56,5 @@ export {
   useAboutMeContext,
   usePersonalContext,
   useCertificateContext,
+  useExperiencesContext,
 };

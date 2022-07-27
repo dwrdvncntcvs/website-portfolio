@@ -11,9 +11,15 @@
   padding: 0px 20px;
   gap: 25px;
 
+  @include LGtablet {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0px;
+  }
+
   .ct__content-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 23%);
+    grid-template-columns: repeat(auto-fill, 20%);
     grid-auto-rows: 46%;
     width: 100%;
     height: 100%;
@@ -21,7 +27,7 @@
     position: relative;
 
     @include desktop {
-      gap: 10px
+      gap: 10px;
     }
 
     .ct__card {
@@ -59,6 +65,10 @@
         }
 
         @include desktop {
+          font-size: 1rem;
+        }
+
+        @include LGtablet {
           font-size: 1rem;
         }
       }

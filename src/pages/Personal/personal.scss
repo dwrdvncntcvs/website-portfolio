@@ -12,6 +12,12 @@
   overflow-x: hidden;
   padding: 0px 20px;
 
+  @include LGtablet {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0px;
+  }
+
   h2 {
     display: flex;
     justify-content: flex-start;
@@ -31,6 +37,10 @@
     @include desktop {
       font-size: 1rem;
     }
+
+    @include LGtablet {
+      font-size: 1.25rem;
+    }
   }
 
   h3 {
@@ -49,6 +59,10 @@
     }
     @include desktop {
       font-size: 1rem;
+    }
+
+    @include LGtablet {
+      font-size: 1.25rem;
     }
 
     span {

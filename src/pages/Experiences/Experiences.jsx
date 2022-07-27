@@ -33,19 +33,17 @@ export default function Experiences() {
     <div className="exp__main-container">
       <OutletHeader title={"experiences"} />
       <section className="exp__content-container">
+        
         <div className="exp__card-container">
-          <button onClick={() => viewWork("left")}>
-            <HiChevronLeft />
-          </button>
           <section className="exp__company-container">
             <img src={expData[workId]?.data.companyLogo} alt="" />
           </section>
           <section className="exp__work-container">
             <div className="exp__company-details">
               <h3>
-              {expData[workId]?.data?.dateStarted} -{" "}
-              {expData[workId]?.data?.dateEnded}
-            </h3>
+                {expData[workId]?.data?.dateStarted} -{" "}
+                {expData[workId]?.data?.dateEnded}
+              </h3>
               <div>
                 <h1>{expData[workId]?.data?.role}</h1>
                 <h2>{expData[workId]?.data?.companyName}</h2>
@@ -53,7 +51,6 @@ export default function Experiences() {
             </div>
             {expData[workId]?.data?.works.map(({ title, descriptions }, i) => (
               <div key={i} className="exp__work-content-container">
-                
                 <h1>{title}</h1>
                 <ul>
                   {descriptions.map((value, i) => (
@@ -65,16 +62,20 @@ export default function Experiences() {
               </div>
             ))}
           </section>
-          <button onClick={() => viewWork("right")}>
-            <HiChevronRight />
-          </button>
         </div>
+        
       </section>
       <section className="exp__footer-container">
+      <button onClick={() => viewWork("left")}>
+          <HiChevronLeft />
+        </button>
         {expData.length > 0 &&
           expData?.map((_value, i) => (
             <div key={i} id={workId === i ? "exp__active" : ""}></div>
           ))}
+          <button onClick={() => viewWork("right")}>
+          <HiChevronRight />
+        </button>
       </section>
     </div>
   );

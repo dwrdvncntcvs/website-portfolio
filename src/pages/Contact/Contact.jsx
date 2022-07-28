@@ -25,8 +25,6 @@ export default function Contact() {
         setResponseMessage();
       }, 5000);
     }
-
-    console.log(state?.responseMessage)
   }, [state?.responseMessage]);
 
   const data = state?.contactDetails?.data;

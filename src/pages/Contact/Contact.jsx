@@ -19,7 +19,6 @@ export default function Contact() {
 
     loadData();
 
-    console.log("useEffect: ", state?.responseMessage);
     if (state?.responseMessage?.value !== "") {
       setTimeout(() => {
         setResponseMessage();

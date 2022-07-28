@@ -51,12 +51,14 @@
         justify-content: center;
         align-items: center;
         border-radius: 20px;
+        padding: 50px;
 
         @include LGtablet {
           background-color: $tertiary-color;
           height: 300px;
           justify-content: flex-start;
           align-items: flex-start;
+          padding: 10px;
         }
 
         img {

@@ -26,6 +26,13 @@
     gap: 20px;
     flex: 10;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @include LGtablet {
+      overflow: hidden;
+      height: 100%;
+    }
 
     .exp__card-container {
       @extend .flex-row;
@@ -36,11 +43,25 @@
       overflow: hidden;
       position: absolute;
 
-      @include LGtablet {
+      @include MDdesktop {
         flex-direction: column;
         position: relative;
         gap: 10px;
         height: auto;
+      }
+
+      @include desktop {
+        flex-direction: column;
+        position: relative;
+        gap: 10px;
+        height: auto;
+      }
+
+      @include LGtablet {
+        flex-direction: column;
+        position: relative;
+        gap: 10px;
+        height: 100%;
       }
 
       .exp__company-container {
@@ -51,12 +72,30 @@
         justify-content: center;
         align-items: center;
         border-radius: 20px;
+        padding: 50px;
+
+        @include MDdesktop {
+          background-color: $tertiary-color;
+          height: 300px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 10px;
+        }
+
+        @include desktop {
+          background-color: $tertiary-color;
+          height: 300px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 10px;
+        }
 
         @include LGtablet {
           background-color: $tertiary-color;
           height: 300px;
           justify-content: flex-start;
           align-items: flex-start;
+          padding: 20px 0px;
         }
 
         img {
@@ -78,10 +117,22 @@
         overflow-y: auto;
         overflow-x: hidden;
 
-        @include LGtablet {
+        @include MDdesktop {
           overflow: hidden;
           height: 100%;
           padding: 20px 0px;
+        }
+
+        @include desktop {
+          overflow: hidden;
+          height: 100%;
+          padding: 20px 0px;
+        }
+
+        @include LGtablet {
+          overflow: hidden;
+          height: 100%;
+          padding: 20px 0px 15% 0px;
         }
 
         .exp__company-details {
@@ -92,27 +143,27 @@
             color: $primary-color;
             transform: translateY(15px);
 
-            @include MDdesktop {
-              font-size: 2.75rem;
-            }
+            // @include MDdesktop {
+            //   font-size: 2.75rem;
+            // }
 
-            @include desktop {
-              font-size: 2.25rem;
-              transform: translateY(10px);
-            }
+            // @include desktop {
+            //   font-size: 2.25rem;
+            //   transform: translateY(10px);
+            // }
           }
 
           h2 {
             font-size: 2.5rem;
             color: $quaternary-color;
 
-            @include MDdesktop {
-              font-size: 2rem;
-            }
+            // @include MDdesktop {
+            //   font-size: 2rem;
+            // }
 
-            @include desktop {
-              font-size: 1.5rem;
-            }
+            // @include desktop {
+            //   font-size: 1.5rem;
+            // }
           }
 
           h3 {
@@ -120,9 +171,9 @@
             color: $quaternary-color;
             letter-spacing: 2px;
 
-            @include desktop {
-              font-size: 0.75rem;
-            }
+            // @include desktop {
+            //   font-size: 0.75rem;
+            // }
           }
         }
 
@@ -134,13 +185,13 @@
             font-size: 1.5rem;
             color: $primary-color;
 
-            @include MDdesktop {
-              font-size: 1.25rem;
-            }
+            // @include MDdesktop {
+            //   font-size: 1.25rem;
+            // }
 
-            @include desktop {
-              font-size: 0.9rem;
-            }
+            // @include desktop {
+            //   font-size: 0.9rem;
+            // }
           }
 
           ul {
@@ -152,22 +203,18 @@
             position: relative;
             list-style: none;
 
-            @include MDdesktop {
-              font-size: 0.75rem;
-            }
+            // @include MDdesktop {
+            //   font-size: 0.75rem;
+            // }
 
-            @include desktop {
-              font-size: 0.6rem;
-            }
+            // @include desktop {
+            //   font-size: 0.6rem;
+            // }
 
             li {
               @extend .flex-row;
               align-items: center;
               position: relative;
-
-              p {
-                transform: translateY(30%) translateX(5px);
-              }
 
               #exp__line {
                 @extend .flex-column;

@@ -19,14 +19,11 @@ export default function Contact() {
 
     loadData();
 
-    console.log("useEffect: ", state?.responseMessage);
     if (state?.responseMessage?.value !== "") {
       setTimeout(() => {
         setResponseMessage();
       }, 5000);
     }
-
-    console.log(state?.responseMessage)
   }, [state?.responseMessage]);
 
   const data = state?.contactDetails?.data;

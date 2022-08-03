@@ -25,7 +25,7 @@ export default function ANavBar({ position }) {
       to: "/about-me/experiences",
       title: "Experiences",
     },
-    { Icon: HiAcademicCap, to: "/about-me/academic", title: "Academic" },
+    // { Icon: HiAcademicCap, to: "/about-me/academic", title: "Academic" },
   ];
 
   return (

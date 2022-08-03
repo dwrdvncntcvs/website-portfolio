@@ -18,9 +18,8 @@
   }
 
   .ct__content-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 20%);
-    grid-auto-rows: 46%;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     gap: 20px;
@@ -30,18 +29,39 @@
       gap: 10px;
     }
 
+    @include LGtablet {
+      grid-template-columns: repeat(auto-fill, 22%);
+      grid-auto-rows: 20%;
+    }
+
     .ct__card {
       @extend .flex-column;
-      width: auto;
+      width: 250px;
       background-color: $tertiary-color;
       border-radius: 20px;
-      height: 100%;
+      height: 250px;
       position: relative;
       justify-content: center;
       align-items: center;
       transition: all ease 0.2s;
       padding: 5px;
       cursor: pointer;
+
+      @include MDdesktop {
+        width: 200px;
+        height: 200px;
+      }
+
+      @include desktop {
+        min-width: auto;
+        width: 200px;
+        height: 200px;
+      }
+
+      @include LGtablet {
+        width: 190px;
+        height: 190px;
+      }
 
       span {
         width: 100%;

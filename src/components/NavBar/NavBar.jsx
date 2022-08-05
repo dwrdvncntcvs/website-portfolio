@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navBar.scss";
 import { Link, useLocation } from "react-router-dom";
 import { HiHome, HiCode, HiFolder, HiPhone, HiUser } from "react-icons/hi";
@@ -7,9 +7,15 @@ import { SOC_MED } from "../../utils/variables";
 import { app_logo } from "../../assets/images";
 import Tooltip from "../Tooltip/Tooltip";
 import { isLinkActive } from "../../utils/helper";
+import { useEffect } from "react";
 
 export default function NavBar() {
   const location = useLocation();
+  const [windowSize, setWindowSize] = useState(window.innerHeight);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWindowSize(window.innerWidth));
+  }, []);
 
   const navLinks = [
     { Icon: HiHome, to: "/", title: "Home" },
@@ -34,7 +40,11 @@ export default function NavBar() {
       </section>
       <section id="nb__link-container">
         {navLinks.map(({ Icon, to, title }, i) => (
-          <Tooltip key={i} title={title} position="right">
+          <Tooltip
+            key={i}
+            title={title}
+            position={windowSize > 768 ? "right" : ""}
+          >
             <Link
               className={
                 isLinkActive(location, to, "/") ? "nb__link-active" : "nb__link"

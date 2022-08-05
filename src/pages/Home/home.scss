@@ -7,6 +7,11 @@
   height: 100%;
   flex: 1;
 
+  @include tablet {
+    padding: 0px 0px;
+    flex-direction: column-reverse;
+  }
+
   .h__left-container {
     display: flex;
     flex: 3;
@@ -31,6 +36,13 @@
       justify-content: flex-end;
     }
 
+    @include tablet {
+      padding: 20px 0px;
+      justify-content: flex-start;
+      height: 100%;
+      flex: 1;
+    }
+
     h3 {
       color: $quaternary-color;
       font-size: 5rem;
@@ -52,6 +64,11 @@
         font-size: 3rem;
         transform: translateY(25px);
       }
+
+      @include tablet {
+        font-size: 2.75rem;
+        transform: translateY(25px);
+      }
     }
 
     h1 {
@@ -71,6 +88,10 @@
       @include LGtablet {
         font-size: 4.5rem;
       }
+
+      @include tablet {
+        font-size: 3.75rem;
+      }
     }
 
     p {
@@ -89,6 +110,10 @@
 
       @include LGtablet {
         font-size: 1.5rem;
+      }
+
+      @include tablet {
+        font-size: 1.25rem;
       }
     }
     button {
@@ -123,6 +148,12 @@
         width: 300px;
       }
 
+      @include tablet {
+        height: 45px;
+        font-size: 15px;
+        width: 250px;
+      }
+
       &:hover {
         background-color: $primary-color;
         color: $quaternary-color;
@@ -148,6 +179,14 @@
       align-items: center;
     }
 
+    @include tablet {
+      width: auto;
+      height: 50%;
+      right: 100px;
+      top: 100px;
+      align-items: center;
+    }
+
     img {
       width: auto;
       height: 90%;
@@ -157,6 +196,12 @@
       @include LGtablet {
         height: 100%;
         transform: none;
+      }
+
+      @include tablet {
+        height: 100%;
+        transform: none;
+        flex: 4;
       }
     }
   }

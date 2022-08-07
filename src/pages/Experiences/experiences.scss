@@ -17,6 +17,12 @@
     padding: 20px 0px;
   }
 
+  @include tablet {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0px;
+  }
+
   .exp__content-container {
     @extend .flex-row;
     width: 100%;
@@ -30,6 +36,11 @@
     overflow-x: hidden;
 
     @include LGtablet {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    @include tablet {
       overflow: hidden;
       height: 100%;
     }
@@ -58,6 +69,13 @@
       }
 
       @include LGtablet {
+        flex-direction: column;
+        position: relative;
+        gap: 10px;
+        height: 100%;
+      }
+
+      @include tablet {
         flex-direction: column;
         position: relative;
         gap: 10px;
@@ -98,6 +116,14 @@
           padding: 20px 0px;
         }
 
+        @include tablet {
+          background-color: $tertiary-color;
+          height: 300px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 0px;
+        }
+
         img {
           object-fit: cover;
           border-radius: 20px;
@@ -105,6 +131,10 @@
           height: 100%;
 
           @include LGtablet {
+            object-fit: contain;
+          }
+
+          @include tablet {
             object-fit: contain;
           }
         }
@@ -130,6 +160,12 @@
         }
 
         @include LGtablet {
+          overflow: hidden;
+          height: 100%;
+          padding: 20px 0px 15% 0px;
+        }
+
+        @include tablet {
           overflow: hidden;
           height: 100%;
           padding: 20px 0px 15% 0px;

@@ -18,6 +18,12 @@
     padding: 20px 0px;
   }
 
+  @include tablet {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0px;
+  }
+
   h2 {
     display: flex;
     justify-content: flex-start;
@@ -41,6 +47,10 @@
     @include LGtablet {
       font-size: 1.25rem;
     }
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
 
   h3 {
@@ -62,6 +72,10 @@
     }
 
     @include LGtablet {
+      font-size: 1.25rem;
+    }
+
+    @include tablet {
       font-size: 1.25rem;
     }
 

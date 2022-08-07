@@ -19,6 +19,10 @@
     grid-template-columns: 1fr;
   }
 
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
   .am__left-container {
     @extend .flex-column;
     align-items: center;
@@ -47,6 +51,11 @@
       }
 
       @include LGtablet {
+        width: 400px;
+        height: 400px;
+      }
+
+      @include tablet {
         width: 400px;
         height: 400px;
       }

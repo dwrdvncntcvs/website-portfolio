@@ -16,8 +16,8 @@ export default function Projects() {
   const data = state?.projectData?.data;
 
   return (
-    <div className="p__main-container">
-      <PageContainer>
+    <PageContainer>
+      <div className="p__main-container">
         <FloatingImage src={Folders} alt="floating-folders" />
         {data?.description && (
           <PageHeader title={"portfolio"} description={data?.description} />
@@ -36,8 +36,8 @@ export default function Projects() {
             </Link>
           ))}
         </section>
-      </PageContainer>
-      <Outlet />
-    </div>
+        <Outlet />
+      </div>
+    </PageContainer>
   );
 }

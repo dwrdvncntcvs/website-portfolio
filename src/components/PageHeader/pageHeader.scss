@@ -23,6 +23,10 @@
     @include LGtablet {
       font-size: 3.5rem;
     }
+
+    @include tablet {
+      font-size: 3.5rem;
+    }
   }
 
   p {
@@ -43,6 +47,9 @@
     @include LGtablet {
       font-size: 1.25rem;
     }
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
 }
-

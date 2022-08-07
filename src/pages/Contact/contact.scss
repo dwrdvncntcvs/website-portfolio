@@ -12,8 +12,11 @@
     flex-direction: column;
   }
 
-
   @include LGtablet {
+    flex-direction: column;
+  }
+
+  @include tablet {
     flex-direction: column;
   }
 

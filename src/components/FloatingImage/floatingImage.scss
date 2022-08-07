@@ -19,4 +19,9 @@
     height: 125px;
     transform: translateX(-20px) translateY(20px);
   }
+
+  @include tablet {
+    height: 125px;
+    transform: translateX(-10px) translateY(10px);
+  }
 }

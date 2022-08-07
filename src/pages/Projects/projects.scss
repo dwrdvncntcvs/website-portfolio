@@ -5,7 +5,7 @@
   @extend .flex-column;
   @extend .page-size;
   flex: 1;
-  position: relative;
+  padding: 20px 0px;
 
   .p__content-container {
     display: grid;
@@ -13,11 +13,11 @@
     width: 100%;
     gap: 20px;
     z-index: 1;
-  
+
     @include MDdesktop {
       grid-template-columns: repeat(auto-fill, 250px);
     }
-  
+
     @include desktop {
       grid-template-columns: repeat(auto-fill, 200px);
     }
@@ -25,7 +25,13 @@
     @include LGtablet {
       grid-template-columns: repeat(auto-fill, 250px);
     }
-  
+
+    @include tablet {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
     .p__image-container {
       display: flex;
       justify-content: center;
@@ -34,11 +40,11 @@
       border-radius: 20px;
       background-color: $tertiary-color;
       transition: all ease-in-out 0.2s;
-  
+
       @include MDdesktop {
         height: 400px;
       }
-  
+
       @include desktop {
         height: 300px;
       }
@@ -46,16 +52,20 @@
       @include LGtablet {
         height: 400px;
       }
-  
+
+      @include tablet {
+        width: 45%;
+        height: 400px;
+      }
+
       &:hover {
         // border: 5px solid $primary-color;
         outline: 10px solid $primary-color;
       }
-  
+
       img {
         width: 100%;
       }
     }
   }
-  
 }

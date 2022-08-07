@@ -5,6 +5,8 @@ main {
   @extend .flex-column;
   @extend .page-size;
   flex: 1;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   z-index: 1;
@@ -49,6 +51,15 @@ main {
       grid-template-rows: 50% repeat(3, auto);
     }
 
+    @include tablet {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+      grid-template-columns: repeat(auto-fill, 100%);
+      grid-template-rows: 50% repeat(3, auto);
+      overflow-y: auto;
+    }
+
     #pd__back-btn {
       position: absolute;
       right: 20px;
@@ -84,9 +95,14 @@ main {
     }
 
     section {
+      flex: 1;
       padding: 10px;
 
       @include LGtablet {
+        height: 100%;
+      }
+
+      @include tablet {
         height: 100%;
       }
     }
@@ -98,6 +114,11 @@ main {
       @include LGtablet {
         height: 100%;
       }
+
+      @include tablet {
+        height: 100%;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -147,6 +168,14 @@ main {
       justify-content: center;
       padding: 30px;
 
+      @include LGtablet {
+        justify-content: flex-start;
+      }
+
+      @include tablet {
+        justify-content: flex-start;
+      }
+
       h1 {
         font-size: 4rem;
         color: $primary-color;
@@ -158,12 +187,15 @@ main {
         @include desktop {
           font-size: 2rem;
         }
+
+        @include tablet {
+          font-size: 3rem;
+        }
       }
 
       p {
         font-size: 1.25rem;
         color: $quaternary-color;
-        font-weight: bold;
         text-align: left;
 
         @include MDdesktop {
@@ -173,6 +205,10 @@ main {
         // @include desktop {
         //   font-size: 1.1rem;
         // }
+
+        @include tablet {
+          font-size: 1.25rem;
+        }
       }
     }
 
@@ -191,6 +227,10 @@ main {
 
         @include desktop {
           font-size: 1.75rem;
+        }
+
+        @include tablet {
+          font-size: 3rem;
         }
       }
 
@@ -231,6 +271,11 @@ main {
             }
 
             @include LGtablet {
+              width: 20px;
+              height: 20px;
+            }
+
+            @include tablet {
               width: 20px;
               height: 20px;
             }
@@ -290,7 +335,7 @@ main {
     z-index: 100;
     width: 100%;
     height: 50px;
-    bottom: 0;
+    bottom: 0px;
     color: $secondary-color;
     text-decoration: none;
     font-size: 1.5rem;
@@ -310,6 +355,12 @@ main {
     @include LGtablet {
       height: 30px;
       font-size: 1rem;
+    }
+
+    @include tablet {
+      height: 30px;
+      font-size: 1rem;
+      flex: 1;
     }
 
     &:hover {

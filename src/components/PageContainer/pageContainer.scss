@@ -17,4 +17,8 @@
   // @include desktop {
   //   padding: 20px;
   // }
+
+  @include phone {
+    padding: 30px;
+  }
 }

@@ -51,6 +51,13 @@
         position: fixed;
         border-radius: 0px;
       }
+
+      @include phone {
+        max-width: 100%;
+        min-width: 100%;
+        position: fixed;
+        border-radius: 0px;
+      }
     }
 
     button {
@@ -69,6 +76,10 @@
       color: $quaternary-color;
       transition: all ease 0.2s;
       z-index: 2;
+
+      @include phone {
+        position: border;
+      }
 
       &:hover {
         opacity: 0.5;
@@ -96,6 +107,14 @@
 
     @include tablet {
       position: absolute;
+      width: 40%;
+      border-radius: 10px;
+    }
+
+    @include phone {
+      position: absolute;
+      width: 40%;
+      border-radius: 10px;
     }
   }
 
@@ -106,7 +125,12 @@
     }
 
     @include tablet {
-      top: 50%;
+      top: 89%;
+      left: 5%;
+    }
+
+    @include phone {
+      top: 89%;
       left: 5%;
     }
   }
@@ -118,7 +142,12 @@
     }
 
     @include tablet {
-      top: 50%;
+      top: 89%;
+      right: 5%;
+    }
+
+    @include phone {
+      top: 89%;
       right: 5%;
     }
   }

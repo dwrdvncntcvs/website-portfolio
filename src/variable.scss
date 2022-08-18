@@ -13,7 +13,7 @@ $MDdesktop: 1600px;
 $desktop: 1366px;
 $LGtablet: 1150px;
 $tablet: 768px;
-$phone: 360px;
+$phone: 500px;
 
 @mixin LGdesktop {
   @media (max-width: #{$LGdesktop}) and (min-width: #{$MDdesktop + 1}) {

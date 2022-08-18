@@ -24,4 +24,9 @@
     height: 125px;
     transform: translateX(-10px) translateY(10px);
   }
+
+  @include phone {
+    height: 125px;
+    transform: translateX(-10px) translateY(10px);
+  }
 }

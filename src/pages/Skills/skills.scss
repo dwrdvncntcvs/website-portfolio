@@ -16,6 +16,11 @@
     gap: 30px;
   }
 
+  @include phone {
+    grid-template-columns: 100%;
+    gap: 30px;
+  }
+
   section {
     h2 {
       color: $quaternary-color;
@@ -36,6 +41,10 @@
 
       @include tablet {
         font-size: 2rem;
+      }
+
+      @include phone {
+        font-size: 2.5rem;
       }
     }
   }
@@ -62,10 +71,13 @@
       gap: 30px;
     }
 
+    @include phone {
+      gap: 25px;
+    }
+
     div {
       // @extend .flex-row;
       display: grid;
-
       grid-template-columns: 15% 85%;
       gap: 10px;
       height: auto;
@@ -92,6 +104,11 @@
         grid-template-columns: 10% 90%;
       }
 
+      @include phone {
+        padding-right: 0px;
+        grid-template-columns: 10% 90%;
+      }
+
       #s__soft-icon {
         @extend .flex-column;
         font-size: 60px;
@@ -112,6 +129,11 @@
 
         @include tablet {
           font-size: 40px;
+        }
+
+        @include phone {
+          font-size: 40px;
+          transform: translateX(-25px);
         }
       }
 
@@ -137,6 +159,10 @@
         }
 
         @include tablet {
+          font-size: 1rem;
+        }
+
+        @include phone {
           font-size: 1rem;
         }
       }
@@ -171,6 +197,11 @@
         padding: 10px 50px;
       }
 
+      @include phone {
+        grid-template-columns: repeat(auto-fill, 120px);
+        padding: 10px 20px;
+      }
+
       div {
         @extend .flex-row;
         gap: 10px;
@@ -201,6 +232,10 @@
             width: 35px;
             height: 35px;
           }
+          @include phone {
+            width: 35px;
+            height: 35px;
+          }
         }
 
         p {
@@ -220,6 +255,10 @@
           }
 
           @include tablet {
+            font-size: 1rem;
+          }
+
+          @include phone {
             font-size: 1rem;
           }
           span {

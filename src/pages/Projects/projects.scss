@@ -32,6 +32,14 @@
       width: 100%;
     }
 
+    @include phone {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      padding-bottom: 10px;
+      gap: 15px;
+    }
+
     .p__image-container {
       display: flex;
       justify-content: center;
@@ -58,13 +66,29 @@
         height: 400px;
       }
 
+      @include phone {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+      }
+
       &:hover {
         // border: 5px solid $primary-color;
         outline: 10px solid $primary-color;
+
+        @include phone {
+          outline: 5px solid $primary-color;
+
+        }
       }
 
       img {
         width: 100%;
+
+        @include phone {
+          height: 100%;
+          object-fit: contain;
+        }
       }
     }
   }

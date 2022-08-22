@@ -198,7 +198,7 @@
       }
 
       @include phone {
-        grid-template-columns: repeat(auto-fill, 120px);
+        grid-template-columns: repeat(auto-fill, 50%);
         padding: 10px 20px;
       }
 

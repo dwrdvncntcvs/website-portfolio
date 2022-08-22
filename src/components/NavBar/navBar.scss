@@ -94,6 +94,7 @@
 
     @include phone {
       flex-direction: row;
+      justify-content: space-evenly;
     }
 
     .nb__link {
@@ -115,7 +116,7 @@
 
         @include phone {
           background-color: transparent;
-          color: $secondary-color;
+          color: $primary-color;
         }
       }
 

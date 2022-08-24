@@ -8,14 +8,12 @@ import { app_logo } from "../../assets/images";
 import Tooltip from "../Tooltip/Tooltip";
 import { isLinkActive } from "../../utils/helper";
 import { useEffect } from "react";
+import useWindowDimensions from "../../hooks/screenHooks";
 
 export default function NavBar() {
-  const location = useLocation();
-  const [windowSize, setWindowSize] = useState(window.innerHeight);
+  const { width } = useWindowDimensions();
 
-  useEffect(() => {
-    window.addEventListener("resize", () => setWindowSize(window.innerWidth));
-  }, []);
+  const location = useLocation();
 
   const navLinks = [
     { Icon: HiHome, to: "/", title: "Home" },
@@ -43,7 +41,7 @@ export default function NavBar() {
           <Tooltip
             key={i}
             title={title}
-            position={windowSize > 768 ? "right" : ""}
+            position={width > 768 ? "right" : ""}
           >
             <Link
               className={

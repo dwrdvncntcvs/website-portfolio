@@ -23,6 +23,12 @@
     padding: 20px 0px;
   }
 
+  @include phone {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0px;
+  }
+
   .ct__content-container {
     display: flex;
     flex-wrap: wrap;
@@ -41,6 +47,11 @@
     }
 
     @include tablet {
+      grid-template-columns: repeat(auto-fill, 22%);
+      grid-auto-rows: 20%;
+    }
+
+    @include phone {
       grid-template-columns: repeat(auto-fill, 22%);
       grid-auto-rows: 20%;
     }
@@ -79,6 +90,11 @@
         height: 190px;
       }
 
+      @include phone {
+        width: 45%;
+        height: 175px;
+      }
+
       span {
         width: 100%;
         height: 100%;
@@ -109,6 +125,10 @@
         }
 
         @include tablet {
+          font-size: 1rem;
+        }
+
+        @include phone {
           font-size: 1rem;
         }
       }

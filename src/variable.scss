@@ -46,7 +46,7 @@ $phone: 500px;
 }
 
 @mixin phone {
-  @media (max-width: #{$phone}) {
+  @media (max-width: #{$phone}) and (min-width: #{$phone - 400}) {
     @content;
   }
 }

@@ -1,6 +1,10 @@
 @import "../../index.scss";
 @import "../../variable.scss";
 
+.am__header-addons {
+  margin-top: 5%;
+}
+
 .am__main-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -21,6 +25,10 @@
 
   @include tablet {
     grid-template-columns: 1fr;
+  }
+
+  @include phone {
+    grid-template-columns: 100%;
   }
 
   .am__left-container {
@@ -58,6 +66,11 @@
       @include tablet {
         width: 400px;
         height: 400px;
+      }
+
+      @include phone {
+        width: 90%;
+        height: auto;
       }
     }
   }

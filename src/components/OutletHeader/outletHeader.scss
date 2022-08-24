@@ -17,5 +17,9 @@
     @include desktop {
       font-size: 2.5rem !important;
     }
+
+    @include phone {
+      font-size: 2.5rem !important;
+    }
   }
 }

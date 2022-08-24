@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { useMemo } from "react";
 import { useContactContext } from "../../hooks/dataHooks";
 import useWindowDimensions from "../../hooks/screenHooks";
 import "./contactForm.scss";
-
-const { innerWidth } = window;
 
 export default function ContactForm() {
   const { sendEmailRequest } = useContactContext();
@@ -26,7 +23,7 @@ export default function ContactForm() {
     {
       placeholder: "Email",
       type: "email",
-      className:  width > 500 ? "end-2-col" : "full-col",
+      className: width > 500 ? "end-2-col" : "full-col",
       value: email,
       action: (e) => setEmail(e.target.value),
     },

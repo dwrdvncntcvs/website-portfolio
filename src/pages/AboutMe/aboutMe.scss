@@ -2,7 +2,9 @@
 @import "../../variable.scss";
 
 .am__header-addons {
-  margin-top: 5%;
+  @include phone {
+    margin-top: 5%;
+  }
 }
 
 .am__main-container {

@@ -23,6 +23,12 @@
     padding: 20px 0px;
   }
 
+  @include phone {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0px;
+  }
+
   .exp__content-container {
     @extend .flex-row;
     width: 100%;
@@ -41,6 +47,11 @@
     }
 
     @include tablet {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    @include phone {
       overflow: hidden;
       height: 100%;
     }
@@ -82,6 +93,13 @@
         height: 100%;
       }
 
+      @include phone {
+        flex-direction: column;
+        position: relative;
+        gap: 10px;
+        height: 100%;
+      }
+
       .exp__company-container {
         @extend .flex-column;
         position: relative;
@@ -117,6 +135,14 @@
         }
 
         @include tablet {
+          background-color: $tertiary-color;
+          height: 300px;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding: 0px;
+        }
+
+        @include phone {
           background-color: $tertiary-color;
           height: 300px;
           justify-content: flex-start;
@@ -166,6 +192,12 @@
         }
 
         @include tablet {
+          overflow: hidden;
+          height: 100%;
+          padding: 20px 0px 15% 0px;
+        }
+
+        @include phone {
           overflow: hidden;
           height: 100%;
           padding: 20px 0px 15% 0px;

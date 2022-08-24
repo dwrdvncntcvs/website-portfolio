@@ -24,15 +24,29 @@
     position: fixed;
     flex-direction: column;
     height: auto;
+    top: 10px;
     right: 0px;
     width: 50px;
     z-index: 5;
     border: 5px solid $secondary-color;
     border-right: none;
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 15px 0px 0px 15px;
   }
 
   @include tablet {
+    position: fixed;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-self: center;
+    border-radius: 0px;
+    border-bottom: 5px solid $secondary-color;
+    z-index: 10;
+  }
+
+  @include phone {
     position: fixed;
     flex-direction: row;
     height: 50px;
@@ -78,6 +92,10 @@
       font-size: 1.5rem;
     }
 
+    @include phone {
+      font-size: 1.5rem;
+    }
+
     &:hover {
       color: $secondary-color;
     }
@@ -100,6 +118,10 @@
     }
 
     @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include phone {
       font-size: 1.5rem;
     }
   }

@@ -19,7 +19,7 @@ export default function AboutMe() {
   const data = state?.aboutMeData?.data;
 
   return (
-    <PageContainer>
+    <PageContainer className="am__header-addons">
       <PageHeader title={"about me"} description={data?.description} />
       <FloatingImage src={app_logo} />
       <div className="am__main-container">

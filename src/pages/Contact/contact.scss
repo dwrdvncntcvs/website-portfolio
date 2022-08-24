@@ -20,6 +20,10 @@
     flex-direction: column;
   }
 
+  @include phone {
+    flex-direction: column;
+  }
+
   .c__full-header {
     width: 100% !important;
   }

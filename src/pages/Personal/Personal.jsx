@@ -31,22 +31,24 @@ export default function Personal() {
   return (
     <div className="pl__main-container">
       <OutletHeader title={data?.title} />
-      {data?.description.map((value, i) => (
-        <p key={i}>
-          {i < 1 && (
-            <>
-              Hey there! I'm <span>{data?.name}</span>.
-            </>
-          )}{" "}
-          {value}
-        </p>
-      ))}
-      {h2Values.map(({ Icon, value }, i) => (
-        <h2 key={i}>
-          <Icon />
-          {value}
-        </h2>
-      ))}
+      <div className="pl__content-container">
+        {data?.description.map((value, i) => (
+          <p key={i}>
+            {i < 1 && (
+              <>
+                Hey there! I'm <span>{data?.name}</span>.
+              </>
+            )}{" "}
+            {value}
+          </p>
+        ))}
+        {h2Values.map(({ Icon, value }, i) => (
+          <h2 key={i}>
+            <Icon />
+            {value}
+          </h2>
+        ))}
+      </div>
     </div>
   );
 }

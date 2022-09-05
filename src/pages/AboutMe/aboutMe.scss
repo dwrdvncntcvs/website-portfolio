@@ -51,8 +51,8 @@
       transition: all ease 0.2s;
 
       @include MDdesktop {
-        width: 500px;
-        height: 500px;
+        width: 400px;
+        height: 400px;
       }
 
       @include desktop {

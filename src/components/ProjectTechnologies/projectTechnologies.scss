@@ -1,0 +1,46 @@
+@import "../../index.scss";
+@import "../../variable.scss";
+
+.pt__technologies-container {
+  @extend .flex-column;
+  width: 100%;
+  gap: 10px;
+
+  h1 {
+    font-size: 2rem;
+    color: $quaternary-color;
+  }
+
+  .pt__technologies {
+    @extend .flex-row;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    overflow: auto;
+    gap: 10px;
+
+    #pt__technology {
+      @extend .flex-row;
+      width: auto;
+      background-color: $tertiary-color;
+      padding: 10px;
+      padding-inline: 20px;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+
+      #pt__icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      p {
+        color: $quaternary-color;
+        font-size: .75rem;
+      }
+    }
+  }
+}

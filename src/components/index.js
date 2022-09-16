@@ -8,3 +8,7 @@ export { default as Map } from "./Map/Map";
 export { default as ContactForm } from "./ContactForm/ContactForm";
 export { default as ResponseMsg } from "./ResponseMsg/ResponseMsg";
 export { default as OutletHeader } from "./OutletHeader/OutletHeader";
+export { default as MainImage } from "./MainImage/MainImage";
+export { default as ProjectDescription } from "./ProjectDescription/ProjectDescription";
+export { default as ProjectTechnologies } from "./ProjectTechnologies/ProjectTechnologies";
+export { default as ProjectImages } from "./ProjectImages/ProjectImages";

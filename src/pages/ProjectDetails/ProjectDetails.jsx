@@ -6,6 +6,7 @@ import "./projectDetails.scss";
 import {
   MainImage,
   ProjectDescription,
+  ProjectHeader,
   ProjectImages,
   ProjectTechnologies,
 } from "../../components";
@@ -38,6 +39,7 @@ export default function ProjectDetails() {
           <HiX />
         </button>
         {data?.mainImage && <MainImage data={data} />}
+        {data?.details && <ProjectHeader data={data} />}
         {data?.description && <ProjectDescription data={data} />}
         {data?.technologies && <ProjectTechnologies data={data} />}
         {data?.images.length > 0 && <ProjectImages data={data} />}

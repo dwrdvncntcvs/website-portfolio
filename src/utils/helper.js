@@ -4,6 +4,7 @@ import {
   SOFT_ICON_VAR,
   TECHNICAL_ICON_VAR,
 } from "./variables";
+import moment from "moment";
 
 const accessLink = (path = "", user) => {
   return user ? `/admin${path}` : path;
@@ -93,6 +94,11 @@ const arrangeImages = (images = [], mainImage) => {
   return imagesArr;
 };
 
+const generateDate = (date) => {
+  const newDate = new Date(date.seconds * 1000);
+  return moment(newDate).format("MMMM YYYY");
+};
+
 export {
   accessLink,
   getAuthError,
@@ -104,4 +110,5 @@ export {
   isLinkActive,
   getResponseObj,
   arrangeImages,
+  generateDate,
 };

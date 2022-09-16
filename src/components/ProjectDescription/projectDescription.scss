@@ -5,11 +5,10 @@
   @extend .flex-column;
   width: 100%;
   height: auto;
-  padding: 10px;
 
   h1 {
     color: $primary-color;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   p {

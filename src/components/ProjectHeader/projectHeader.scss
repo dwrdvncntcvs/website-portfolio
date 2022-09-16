@@ -1,0 +1,27 @@
+@import "../../variable.scss";
+@import "../../index.scss";
+
+.projH__main-container {
+  @extend .flex-column;
+
+  h1 {
+    @extend .flex-row;
+    align-items: center;
+    color: $primary-color;
+    font-size: 3rem;
+    gap: 20px;
+  }
+
+  span {
+    font-size: 1rem;
+    color: gray;
+    font-style: italic;
+  }
+
+  p {
+    color: $quaternary-color;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+  }
+}

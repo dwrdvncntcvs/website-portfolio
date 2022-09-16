@@ -1,0 +1,43 @@
+@import "../../index.scss";
+@import "../../variable.scss";
+
+.projImg__images-container {
+  @extend .flex-column;
+  gap: 10px;
+  font-size: 1.75rem;
+  color: $primary-color;
+
+  .projImg__images {
+    @extend .flex-row;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    div {
+      @extend .flex-column;
+      width: 48.5%;
+      height: auto;
+      box-sizing: border-box;
+      border-radius: 20px;
+      border: 2px solid $quaternary-color;
+      transition: all ease 0.2s;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
+      img {
+        object-fit: contain;
+        border-radius: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        outline: 5px solid $primary-color;
+      }
+    }
+  }
+}

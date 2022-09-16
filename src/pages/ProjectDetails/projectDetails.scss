@@ -189,19 +189,23 @@ main {
     .pd__description-container {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       padding: 30px;
+      overflow-y: auto;
 
       @include LGtablet {
         justify-content: flex-start;
+        overflow: visible;
       }
 
       @include tablet {
         justify-content: flex-start;
+        overflow: visible;
       }
 
       @include phone {
         justify-content: flex-start;
+        overflow: visible;
       }
 
       h1 {

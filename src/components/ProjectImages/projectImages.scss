@@ -21,6 +21,14 @@
       border: 2px solid $quaternary-color;
       transition: all ease 0.2s;
 
+      @include tablet {
+        width: 100%;
+      }
+
+      @include phone {
+        width: 100%;
+      }
+
       img {
         object-fit: contain;
         border-radius: 20px;

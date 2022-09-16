@@ -19,6 +19,7 @@ import {
   SiLeaflet,
   SiHtml5,
   SiCss3,
+  SiRedux,
 } from "react-icons/si";
 
 const API_URL = {
@@ -194,6 +195,11 @@ const TECHNICAL_ICON_VAR = [
     value: SiCss3,
     ref: "css3",
     color: "#1572B6",
+  },
+  {
+    value: SiRedux,
+    ref: "redux",
+    color: "#764ABC",
   },
 ];
 

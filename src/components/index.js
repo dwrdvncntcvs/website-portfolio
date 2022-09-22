@@ -13,3 +13,4 @@ export { default as ProjectDescription } from "./ProjectDescription/ProjectDescr
 export { default as ProjectTechnologies } from "./ProjectTechnologies/ProjectTechnologies";
 export { default as ProjectImages } from "./ProjectImages/ProjectImages";
 export { default as ProjectHeader } from "./ProjectHeader/ProjectHeader";
+export { default as DOMPortal } from "./helpers/DOMPortal";

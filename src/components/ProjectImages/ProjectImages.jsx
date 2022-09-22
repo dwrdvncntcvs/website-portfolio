@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import DOMPortal from "../helpers/DOMPortal";
 import PreviewImages from "../PreviewImages/PreviewImages";
 import "./projectImages.scss";
 
@@ -32,11 +33,16 @@ export default function ProjectImages({ data }) {
         </div>
       </section>
       {preview && (
-        <PreviewImages
-          images={data?.images}
-          previewState={[preview, setPreview]}
-          imageId={imageId}
-          mainImage={image}
+        <DOMPortal
+          element={
+            <PreviewImages
+              images={data?.images}
+              previewState={[preview, setPreview]}
+              imageId={imageId}
+              mainImage={image}
+            />
+          }
+          elementId="preview-image-root"
         />
       )}
     </>

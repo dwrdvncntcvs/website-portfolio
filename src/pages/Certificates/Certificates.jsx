@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { OutletHeader, PreviewImages } from "../../components";
+import { DOMPortal, OutletHeader, PreviewImages } from "../../components";
 import { useCertificateContext } from "../../hooks/dataHooks";
 import "./certificates.scss";
 
@@ -45,10 +45,15 @@ export default function Certificates() {
         ))}
       </section>
       {preview && (
-        <PreviewImages
-          images={images()}
-          previewState={[preview, setPreview]}
-          mainImage={image}
+        <DOMPortal
+          element={
+            <PreviewImages
+              images={images()}
+              previewState={[preview, setPreview]}
+              mainImage={image}
+            />
+          }
+          elementId="preview-image-root"
         />
       )}
     </div>

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./projects.scss";
-import { FloatingImage, PageContainer, PageHeader } from "../../components";
+import {
+  DOMPortal,
+  FloatingImage,
+  PageContainer,
+  PageHeader,
+} from "../../components";
 import { useProjectsContext } from "../../hooks/dataHooks";
 import { Link, Outlet } from "react-router-dom";
 import { Folders } from "../../assets/svgs";
@@ -36,7 +41,7 @@ export default function Projects() {
             </Link>
           ))}
         </section>
-        <Outlet />
+        <DOMPortal element={<Outlet />} elementId={"overlay-root"} />
       </div>
     </PageContainer>
   );
